@@ -1,0 +1,10 @@
+.project-page{
+  display: flex;
+}
+
+.left-column{
+  width: 17%;
+}
+.right-column{
+  width: 83%;
+}

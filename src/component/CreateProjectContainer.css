@@ -1,0 +1,54 @@
+
+
+.Project-Container{
+    width: 95%;
+    margin:-1.5rem  auto 0;
+    height: 70vh;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    border-radius: 12px;
+}
+.Project-Head{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+    height: 12%;
+    
+}
+.Project-Head-input{
+    width: 50%;
+    height: 100%;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+
+.Project-Head-btn{
+    background-color: blue;
+    width: 150px;
+    height: 37px;
+    color: white;
+    border-radius: 40px;
+    border: 1px solid black;
+}
+
+.Project-Main{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns with equal width */
+    grid-gap: 10px; /* Gap between grid items */
+    width: 75%;
+    height: 70%;
+    padding: 20px;
+    margin-top: 20px;
+}
+.Project-Main-input{
+    width: 92%;
+    height: 40%;
+    border-radius: 4px;
+    border: 1px solid gray;
+}
+.Project-status{
+    position: relative;
+    left: 50%;
+    bottom: 7%;
+}
