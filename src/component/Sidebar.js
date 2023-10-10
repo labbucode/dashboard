@@ -19,7 +19,7 @@ function Sidebar() {
       <img src={ProjectListIcon} />
       </div>
       <div className="sidebar-icon">
-        <img src={PlusIcon} />
+        <img src={BluePlusIcon} />
       </div>
     </div>
       <div className="exit-icon">

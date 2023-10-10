@@ -1,0 +1,63 @@
+.Listening-container{
+  width: 95%;
+  margin:-1.5rem  auto 0;
+  height: 75vh;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+}
+
+tbody{
+  text-align: center;
+  background-color: white;
+}
+
+.td-btn1{
+  background-color: blue;
+    width: 75px;
+    height: 28px;
+    border-radius: 15px;
+    border: none;
+    color: white;
+}
+.td-btn{
+  color: blue;
+    width: 75px;
+    height: 28px;
+    border-radius: 15px;
+    border: 1px solid blue;
+    background-color: white;
+}
+
+
+.search-input{  
+  width: 25%;
+  margin: 2%;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #ccc; /* Default bottom line color */
+  padding: 5px;
+  transition: border-color 0.3s;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  background-color: #c2edf9;
+  color: #312b2b;
+  padding: 10px;
+  font-weight: 500;
+}
+
+td {
+  background-color: white;
+  padding: 10px;
+  border: none;
+}
+tr{
+  border: 1px solid #ebdfdf;
+}

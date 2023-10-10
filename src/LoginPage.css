@@ -129,3 +129,19 @@
     bottom: 100px;
     color: red;
   }
+
+  .OvalIcon{
+    position: absolute;
+    top: -20%;
+    left: 33%;
+  }
+
+  .logo{
+    position: relative;
+    color: white;
+    top: 31px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}

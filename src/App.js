@@ -1,8 +1,10 @@
 // src/App.js
 import React from 'react';
-import CreateProjectContainer from './component/CreateProjectContainer';
+import Listening from './component/Listening';
+// import Dashboard from './pages/dash/Dashboard';
+// import CreateProjectContainer from './component/CreateProjectContainer';
 // import Sidebar from './component/Sidebar';
-import LoginPage from './LoginPage';
+// import LoginPage from './LoginPage';
 // import Header from './component/Header';
 // import CreateProject from './CreateProject';
 
@@ -10,9 +12,11 @@ import LoginPage from './LoginPage';
 function App() {
   return (
     <div className="App">
+      <Listening />
+
+      {/* <Dashboard /> */}
      {/* <CreateProject /> */}
-      
-       <LoginPage /> 
+       {/* <LoginPage />  */}
       {/* <Header /> */}
        {/* <Sidebar />  */}
        {/* <CreateProjectContainer />  */}

@@ -3,4 +3,22 @@
  background-color: blue;
  border-bottom-left-radius: 30px;
 }
-  
+
+.Logo-img{
+  position: relative;
+  left: 45%;
+}
+.text{
+  position: relative;
+  top: 39%;
+  left: 7%;
+  color: #fff;
+}
+.oval{
+  position: relative;
+}
+.text-para{
+ 
+  display: inline;
+  margin: 20px;
+}

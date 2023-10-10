@@ -34,7 +34,11 @@ function LoginPage() {
   return (
     <>
       <div className="blue-box">
-        {/* ... Your existing code ... */}
+        <img className="OvalIcon" src={Oval} />
+        <div className="logo">
+        <img src={Logo} />
+        <p>Online Project Management</p>
+        </div>
       </div>
       <div className="login-container">
         <div className="login-form">
