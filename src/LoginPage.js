@@ -1,11 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './LoginPage.css';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import Oval from './assists/Oval.svg';
 import Logo from './assists/Logo.svg';
-import {useNavigate} from "react-router-dom"
+import {useNavigate} from "react-router-dom";
+import axios, { Axios } from 'axios';
+
+
+
 function LoginPage() {
-  // const navigate = useNavigate()
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
@@ -17,18 +20,12 @@ function LoginPage() {
     if(email === "" || password === ""){
       setIsInvalidCredentials(true)
     } else {
-      //  navigate('/check')
+     axios.post("https://backend-bbi9.onrender.com/auth/login",{"email":email,"password":password})
+      .then(data => console.log(data)).catch(err=>{
+        console.log(err);
+      }) 
     }
-   // Simple email and password validation
-    // if (email === 'user@example.com' && password === 'password') {
-    //   // Successful login
-    //   console.log('Login successful');
-    //   setIsInvalidCredentials(false);
-    // } else {
-    //   // Invalid login
-    //   console.log('Invalid login');
-    //   setIsInvalidCredentials(true);
-    // }
+   
   };
 
   return (
