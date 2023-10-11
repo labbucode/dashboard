@@ -9,37 +9,47 @@ export default function Listening() {
   const [limit, setLimit] = useState(5);
   const [maxPage, setMaxPage] = useState(1);
 
-
+  const [searchText, setSearchText] = useState('');
+  const [filteredLists, setFilteredLists] = useState([]);
 
   useEffect(() => {
     axios.get(`https://backend-bbi9.onrender.com/listings?page=${page}&limit=${limit}`)
       .then((response) => {
         setLists(response.data.data);
         setMaxPage(response.data.totalPages);
-        console.log(response);
-        setLoading(false); // Set loading to false once data is fetched
+        setLoading(false);
+        filterLists(response.data.data, searchText); // Filter the data when it's loaded
       })
-      
       .catch((error) => {
         console.error('Error fetching data:', error);
-        setLoading(false); // Set loading to false in case of an error
+        setLoading(false);
       });
-  }, [page]);
+  }, [page, searchText]);
+
+
+  const filterLists = (data, filter) => {
+    const filteredData = data.filter((item) => {
+      const values = Object.values(item);
+      return values.some((value) =>
+        value.toString().toLowerCase().includes(filter.toLowerCase())
+      );
+    });
+  
+    setFilteredLists(filteredData);
+  };
 
   const  handleStatus =  async (status, id) => {
     try {
       const response = await axios.put("https://backend-bbi9.onrender.com/listings/status", { status, id });
       if (response.status === 200) {
-        const updatedDocument = response.data; // Updated document received from the API
-  
-        // Find the index of the document to update in the 'lists' array
+        const updatedDocument = response.data; 
         const indexToUpdate = lists.findIndex(item => item._id === updatedDocument._id);
   
         if (indexToUpdate !== -1) {
-          // If the document is found, replace it in the 'lists' array
+          
           const updatedLists = [...lists];
           updatedLists[indexToUpdate] = updatedDocument;
-          setLists(updatedLists); // Update the state with the updated 'lists' array
+          setLists(updatedLists); 
         }
       }
     }catch(err){
@@ -52,7 +62,13 @@ export default function Listening() {
 
   return (
     <div className='Listening-container'>
-      <input placeholder='Search' className='search-input' />
+      <input
+  placeholder="Search"
+  className="search-input"
+  value={searchText}
+  onChange={(e) => setSearchText(e.target.value)}
+/>
+
       <div className="container">
         <table>
           <thead>
@@ -74,7 +90,7 @@ export default function Listening() {
                 <td colSpan="10">Loading...</td>
               </tr>
             ) : (
-              lists.map((item, index) => (
+              filteredLists.map((item, index) => (
                 <tr key={index}>
                   <td>{item.project_name}</td>
                   <td>{item.reason}</td>
