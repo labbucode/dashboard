@@ -8,23 +8,38 @@ export default function Listening() {
   const [page, setPage] = useState(1);
   const [limit, setLimit] = useState(5);
   const [maxPage, setMaxPage] = useState(1);
+  const [searchText, setSearchText] = useState('');
+const [filteredLists, setFilteredLists] = useState([]);
 
 
 
-  useEffect(() => {
-    axios.get(`https://backend-bbi9.onrender.com/listings?page=${page}&limit=${limit}`)
-      .then((response) => {
-        setLists(response.data.data);
-        setMaxPage(response.data.totalPages);
-        console.log(response);
-        setLoading(false); 
-      })
-      
-      .catch((error) => {
-        console.error('Error fetching data:', error);
-        setLoading(false); 
-      });
-  }, [page]);
+
+useEffect(() => {
+  axios.get(`https://backend-bbi9.onrender.com/listings?page=${page}&limit=${limit}`)
+    .then((response) => {
+      setLists(response.data.data);
+      setMaxPage(response.data.totalPages);
+      setLoading(false);
+      filterLists(response.data.data, searchText); // Filter the data when it's loaded
+    })
+    .catch((error) => {
+      console.error('Error fetching data:', error);
+      setLoading(false);
+    });
+}, [page, searchText]);
+
+const filterLists = (data, filter) => {
+  // Use filter to match data against the search text
+  const filteredData = data.filter((item) => {
+    const values = Object.values(item);
+    return values.some((value) =>
+      value.toString().toLowerCase().includes(filter.toLowerCase())
+    );
+  });
+
+  setFilteredLists(filteredData);
+};
+
 
   const  handleStatus =  async (status, id) => {
     try {
@@ -37,7 +52,7 @@ export default function Listening() {
           
           const updatedLists = [...lists];
           updatedLists[indexToUpdate] = updatedDocument;
-          setLists(updatedLists); 
+          setFilteredLists(updatedLists); 
         }
       }
     }catch(err){
@@ -50,7 +65,14 @@ export default function Listening() {
 
   return (
     <div className='Listening-container'>
-      <input placeholder='Search' className='search-input' />
+    
+      <input
+  placeholder="Search"
+  className="search-input"
+  value={searchText}
+  onChange={(e) => setSearchText(e.target.value)}
+/>
+
       <div className="container">
         <table>
           <thead>
@@ -72,7 +94,7 @@ export default function Listening() {
                 <td colSpan="10">Loading...</td>
               </tr>
             ) : (
-              lists.map((item, index) => (
+              filteredLists.map((item, index) => (
                 <tr key={index}>
                   <td>{item.project_name}</td>
                   <td>{item.reason}</td>
