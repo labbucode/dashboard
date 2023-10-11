@@ -32,10 +32,13 @@ export default function CreateProjectContainer() {
      type:formData.type,
      division:formData.division,
      category:formData.category,
-     proiority:formData.priority,
+     priority:formData.priority,
      department:formData.department,
      location:formData.location,
      status: "Registered"}
+
+    //  console.log(content);
+     
 
      
     axios.post("https://backend-bbi9.onrender.com/listings", content)
