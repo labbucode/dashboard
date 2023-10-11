@@ -9,69 +9,69 @@ export default function Listening() {
   const [limit, setLimit] = useState(5);
   const [maxPage, setMaxPage] = useState(1);
   const [searchText, setSearchText] = useState('');
-const [filteredLists, setFilteredLists] = useState([]);
+  const [filteredLists, setFilteredLists] = useState([]);
 
 
 
 
-useEffect(() => {
-  axios.get(`https://backend-bbi9.onrender.com/listings?page=${page}&limit=${limit}`)
-    .then((response) => {
-      setLists(response.data.data);
-      setMaxPage(response.data.totalPages);
-      setLoading(false);
-      filterLists(response.data.data, searchText); // Filter the data when it's loaded
-    })
-    .catch((error) => {
-      console.error('Error fetching data:', error);
-      setLoading(false);
+  useEffect(() => {
+    axios.get(`https://backend-bbi9.onrender.com/listings?page=${page}&limit=${limit}`)
+      .then((response) => {
+        setLists(response.data.data);
+        setMaxPage(response.data.totalPages);
+        setLoading(false);
+        filterLists(response.data.data, searchText); // Filter the data when it's loaded
+      })
+      .catch((error) => {
+        console.error('Error fetching data:', error);
+        setLoading(false);
+      });
+  }, [page, searchText]);
+
+  const filterLists = (data, filter) => {
+    // Use filter to match data against the search text
+    const filteredData = data.filter((item) => {
+      const values = Object.values(item);
+      return values.some((value) =>
+        value.toString().toLowerCase().includes(filter.toLowerCase())
+      );
     });
-}, [page, searchText]);
 
-const filterLists = (data, filter) => {
-  // Use filter to match data against the search text
-  const filteredData = data.filter((item) => {
-    const values = Object.values(item);
-    return values.some((value) =>
-      value.toString().toLowerCase().includes(filter.toLowerCase())
-    );
-  });
-
-  setFilteredLists(filteredData);
-};
+    setFilteredLists(filteredData);
+  };
 
 
-  const  handleStatus =  async (status, id) => {
+  const handleStatus = async (status, id) => {
     try {
       const response = await axios.put("https://backend-bbi9.onrender.com/listings/status", { status, id });
       if (response.status === 200) {
-        const updatedDocument = response.data; 
+        const updatedDocument = response.data;
         const indexToUpdate = lists.findIndex(item => item._id === updatedDocument._id);
-  
+
         if (indexToUpdate !== -1) {
-          
+
           const updatedLists = [...lists];
           updatedLists[indexToUpdate] = updatedDocument;
-          setFilteredLists(updatedLists); 
+          setFilteredLists(updatedLists);
         }
       }
-    }catch(err){
+    } catch (err) {
 
     }
-    
+
   }
 
 
 
   return (
     <div className='Listening-container'>
-    
+
       <input
-  placeholder="Search"
-  className="search-input"
-  value={searchText}
-  onChange={(e) => setSearchText(e.target.value)}
-/>
+        placeholder="Search"
+        className="search-input"
+        value={searchText}
+        onChange={(e) => setSearchText(e.target.value)}
+      />
 
       <div className="container">
         <table>
@@ -106,23 +106,23 @@ const filterLists = (data, filter) => {
                   <td>{item.location}</td>
                   <td>{item.status}</td>
                   <td>
-  <button className='td-btn1' onClick={() => handleStatus("Running", item._id)}>Start</button>
-</td>
-<td>
-  <button className='td-btn' onClick={() => handleStatus("Closed", item._id)}>Close</button>
-</td>
-<td>
-  <button className='td-btn' onClick={() => handleStatus("Cancelled", item._id)}>Cancel</button>
-</td>
- </tr>
+                    <button className='td-btn1' onClick={() => handleStatus("Running", item._id)}>Start</button>
+                  </td>
+                  <td>
+                    <button className='td-btn' onClick={() => handleStatus("Closed", item._id)}>Close</button>
+                  </td>
+                  <td>
+                    <button className='td-btn' onClick={() => handleStatus("Cancelled", item._id)}>Cancel</button>
+                  </td>
+                </tr>
               ))
             )}
           </tbody>
         </table>
       </div>
       <div className='btns'>
-      <button className='btn' onClick={() => setPage((prev) => prev < maxPage ? prev + 1 : maxPage)}>Next</button>
-      <button className='btn' onClick={() => setPage((prev) => prev > 0 ? prev - 1 : 1)}>Prev</button>
+        <button className='btn' onClick={() => setPage((prev) => prev < maxPage ? prev + 1 : maxPage)}>Next</button>
+        <button className='btn' onClick={() => setPage((prev) => prev > 0 ? prev - 1 : 1)}>Prev</button>
       </div>
 
     </div>
