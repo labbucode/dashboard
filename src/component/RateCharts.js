@@ -55,7 +55,6 @@ const RateCharts = () => {
     ],
   };
 
-  // Process the data to create the Highcharts options for reject rate
   
   return (
     <div>

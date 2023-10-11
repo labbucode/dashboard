@@ -7,13 +7,13 @@ import '../src/CreateProject.css';
 export default function CreateProject() {
   return (
     <div className='project-page'>
-        <div className='left-column'>
+      <div className='left-column'>
         <Sidebar />
-        </div>
-        <div className='right-column'>
+      </div>
+      <div className='right-column'>
         <Header />
         <CreateProjectContainer />
-        </div>
+      </div>
     </div>
   )
 }

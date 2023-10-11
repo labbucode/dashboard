@@ -1,5 +1,3 @@
-// Sidebar.js
-
 import React from 'react';
 import './Sidebar.css';
 import PlusIcon from '../assists/create-project.svg';
@@ -14,7 +12,7 @@ import { useHeader } from '../HeaderContext';
 
 function Sidebar() {
   const navigate = useNavigate();
-  const { setTitle } = useHeader(); // Access the title from the context
+  const { setTitle } = useHeader(); 
 
   return (
     <>
@@ -23,7 +21,7 @@ function Sidebar() {
           to="/dashboard/graph"
           className={({ isActive }) => {
             if (isActive) {
-              setTitle('Dashboard'); // Update the title
+              setTitle('Dashboard');
             }
             return isActive ? 'active' : ' ';
           }}
@@ -37,7 +35,7 @@ function Sidebar() {
           to="/dashboard/list"
           className={({ isActive }) => {
             if (isActive) {
-              setTitle('Project List'); // Update the title
+              setTitle('Project List'); 
             }
             return isActive ? 'active' : ' ';
           }}
@@ -51,7 +49,7 @@ function Sidebar() {
           to="/dashboard/createproject"
           className={({ isActive }) => {
             if (isActive) {
-              setTitle('Create Project'); // Update the title
+              setTitle('Create Project'); 
             }
             return isActive ? 'active' : ' ';
           }}

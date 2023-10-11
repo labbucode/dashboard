@@ -1,5 +1,3 @@
-// Header.js
-
 import React from 'react';
 import './Header.css';
 import Logo from '../assists/Logo.svg';
@@ -7,7 +5,7 @@ import { FaArrowLeft } from 'react-icons/fa';
 import { useHeader } from '../HeaderContext';
 
 function Header() {
-  const { title } = useHeader(); // Access the title from the context
+  const { title } = useHeader();
 
   return (
     <header className="header">

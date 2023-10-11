@@ -27,16 +27,13 @@ export default function CreateProjectContainer() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    // Display "Loading" for 3 seconds
     setIsLoading(true);
     setLoadingText('Creating...');
 
-    // Simulate a delay for 3 seconds (3000 milliseconds)
     setTimeout(() => {
       setIsLoading(false);
       setLoadingText('');
-      setFormData({ ...formData, theme: '' }); // Clear the 'theme' field
+      setFormData({ ...formData, theme: '' });
 
       const content = {
         project_name: formData.theme,

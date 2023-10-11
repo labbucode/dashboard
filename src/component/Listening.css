@@ -55,6 +55,9 @@ margin: 20px;
     background-color: white;
 }
 
+.search-sort-container{
+  display: flex;
+}
 
 .search-input{  
   width: 25%;

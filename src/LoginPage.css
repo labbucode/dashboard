@@ -1,4 +1,4 @@
-/* src/LoginPage.css */
+
 * {
     margin: 0;
     padding: 0;
@@ -97,21 +97,19 @@
     font-size: 14px;
   }
   
-  /* Style for labels */
   label {
     display: block;
     text-align: left;
     margin-bottom: 5px;
     font-size: 16px;
-    color: #333; /* You can adjust the label text color as needed */
+    color: #333;
   }
   
-  /* Style for input elements */
   input[type="text"] + label,
   input[type="password"] + label {
     display: inline-block;
     margin-bottom: 0;
-    color: #777; /* You can adjust the label text color as needed */
+    color: #777; 
   }
   .form-group-password-input{
     margin: 0;

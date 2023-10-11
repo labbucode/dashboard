@@ -9,34 +9,22 @@ export default function Listening() {
   const [limit, setLimit] = useState(5);
   const [maxPage, setMaxPage] = useState(1);
 
-  const [searchText, setSearchText] = useState('');
-  const [filteredLists, setFilteredLists] = useState([]);
+
 
   useEffect(() => {
     axios.get(`https://backend-bbi9.onrender.com/listings?page=${page}&limit=${limit}`)
       .then((response) => {
         setLists(response.data.data);
         setMaxPage(response.data.totalPages);
-        setLoading(false);
-        filterLists(response.data.data, searchText); // Filter the data when it's loaded
+        console.log(response);
+        setLoading(false); 
       })
+      
       .catch((error) => {
         console.error('Error fetching data:', error);
-        setLoading(false);
+        setLoading(false); 
       });
-  }, [page, searchText]);
-
-
-  const filterLists = (data, filter) => {
-    const filteredData = data.filter((item) => {
-      const values = Object.values(item);
-      return values.some((value) =>
-        value.toString().toLowerCase().includes(filter.toLowerCase())
-      );
-    });
-  
-    setFilteredLists(filteredData);
-  };
+  }, [page]);
 
   const  handleStatus =  async (status, id) => {
     try {
@@ -62,13 +50,7 @@ export default function Listening() {
 
   return (
     <div className='Listening-container'>
-      <input
-  placeholder="Search"
-  className="search-input"
-  value={searchText}
-  onChange={(e) => setSearchText(e.target.value)}
-/>
-
+      <input placeholder='Search' className='search-input' />
       <div className="container">
         <table>
           <thead>
@@ -90,7 +72,7 @@ export default function Listening() {
                 <td colSpan="10">Loading...</td>
               </tr>
             ) : (
-              filteredLists.map((item, index) => (
+              lists.map((item, index) => (
                 <tr key={index}>
                   <td>{item.project_name}</td>
                   <td>{item.reason}</td>
