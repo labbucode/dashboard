@@ -12,6 +12,9 @@
     height: 104px;
     background-color: white;
     margin-right: 13px;
+    border-radius: 7px;
+    border-left: 5px solid #21dae3;
+    padding: 10px;
   }
   h4{
     margin: 2%;

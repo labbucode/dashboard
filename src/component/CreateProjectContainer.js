@@ -5,7 +5,7 @@ import axios from 'axios';
 export default function CreateProjectContainer() {
   const [formData, setFormData] = useState({
     theme: '',
-    reason: 'For Business',
+    reason: 'Business',
     type: 'Internal',
     division: 'Compressor',
     category: 'Quality A',
@@ -17,33 +17,42 @@ export default function CreateProjectContainer() {
     status: ''
   });
 
+  const [isLoading, setIsLoading] = useState(false);
+  const [loadingText, setLoadingText] = useState('');
+
   const handleInputChange = (e) => {
     const { id, value } = e.target;
     setFormData({ ...formData, [id]: value });
   };
 
   const handleSubmit = (e) => {
-
     e.preventDefault();
-    // Perform form submission logic here
-    // console.log(formData);
-    const content = {project_name:formData.theme,
-     reason:formData.reason,
-     type:formData.type,
-     division:formData.division,
-     category:formData.category,
-     priority:formData.priority,
-     department:formData.department,
-     location:formData.location,
-     status: "Registered"}
 
-    //  console.log(content);
-     
+    // Display "Loading" for 3 seconds
+    setIsLoading(true);
+    setLoadingText('Creating...');
 
-     
-    axios.post("https://backend-bbi9.onrender.com/listings", content)
-    .then(data => console.log(data));
-     // For demonstration purposes
+    // Simulate a delay for 3 seconds (3000 milliseconds)
+    setTimeout(() => {
+      setIsLoading(false);
+      setLoadingText('');
+      setFormData({ ...formData, theme: '' }); // Clear the 'theme' field
+
+      const content = {
+        project_name: formData.theme,
+        reason: formData.reason,
+        type: formData.type,
+        division: formData.division,
+        category: formData.category,
+        priority: formData.priority,
+        department: formData.department,
+        location: formData.location,
+        status: 'Registered'
+      };
+
+      axios.post("https://backend-bbi9.onrender.com/listings", content)
+        .then(data => console.log(data));
+    }, 3000);
   };
 
   return (
@@ -58,11 +67,10 @@ export default function CreateProjectContainer() {
               value={formData.theme}
               onChange={handleInputChange}
             />
-            <button className='Project-Head-btn' type='submit'>
-              Start Project
+            <button className="Project-Head-btn" type="submit" disabled={isLoading}>
+              {isLoading ? loadingText : 'Start Project'}
             </button>
           </div>
-
           <div className='Project-Main'>
             <div>
               <label htmlFor='reason' style={{ color: 'gray' }}>
@@ -74,7 +82,8 @@ export default function CreateProjectContainer() {
                 value={formData.reason}
                 onChange={handleInputChange}
               >
-                <option>For Business</option>
+                for Business
+                <option>Business</option>
                 <option>Dealership</option>
                 <option>Transport</option>
               </select>
@@ -204,10 +213,11 @@ export default function CreateProjectContainer() {
               </select>
             </div>
           </div>
-        
-        <div className='Project-status'>
-          <p>Status: Registered</p>
-        </div>
+
+          <div className='Project-status'>
+            <p>Status: Registered</p>
+          </div>
+
         </form>
       </div>
     </div>

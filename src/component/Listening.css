@@ -26,6 +26,18 @@ tbody{
 margin: 20px;
 }
 
+.btn:hover {
+  background-color: #555; /* Change this to the desired background color */
+  color: white; /* Change this to the desired text color */
+  cursor: pointer;
+}
+
+.td-btn1:active,
+.td-btn:active {
+  background-color: #555; /* Change this to the desired background color */
+  color: white; /* Change this to the desired text color */
+  cursor: pointer;
+}
 .td-btn1{
   background-color: blue;
     width: 75px;

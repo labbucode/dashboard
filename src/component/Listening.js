@@ -85,10 +85,16 @@ export default function Listening() {
                   <td>{item.department}</td>
                   <td>{item.location}</td>
                   <td>{item.status}</td>
-                  <td><button className='td-btn1' onClick={() => handleStatus("Running", item._id)}>Start</button></td>
-                  <td><button className='td-btn' onClick={() => handleStatus("Closed", item._id)}>Close</button></td>
-                  <td><button className='td-btn' onClick={() => handleStatus("Cancelled", item._id)}>Cancel</button></td>
-                </tr>
+                  <td>
+  <button className='td-btn1' onClick={() => handleStatus("Running", item._id)}>Start</button>
+</td>
+<td>
+  <button className='td-btn' onClick={() => handleStatus("Closed", item._id)}>Close</button>
+</td>
+<td>
+  <button className='td-btn' onClick={() => handleStatus("Cancelled", item._id)}>Cancel</button>
+</td>
+ </tr>
               ))
             )}
           </tbody>

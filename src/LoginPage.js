@@ -12,11 +12,14 @@ function LoginPage() {
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [isInvalidCredentials, setIsInvalidCredentials] = useState(false);
 
   const handleLogin = (e) => {
     e.preventDefault()
+    setIsLoading(true);
+
     setIsInvalidCredentials(false)
     if(email === "" || password === ""){
       setIsInvalidCredentials(true)
@@ -25,16 +28,15 @@ function LoginPage() {
       .then(data => {
         localStorage.setItem("token", data.access)
         navigate("/dashboard/createproject")
-
-
-
       }
       ).catch(err=>{
         console.log(err);
       }) 
     }
-   
   };
+
+  
+  
 
   return (
     <>
@@ -77,11 +79,13 @@ function LoginPage() {
           <div className="form-group-forget-password">
             <p className="forgot-password">Forgot Password?</p>
           </div>
+
           <div className="form-group">
-            <button className="login-button" onClick={handleLogin}>
-              Login
+            <button className="login-button" onClick={handleLogin} disabled={isLoading}>
+            {isLoading ? 'Loading...' : 'Login'}
             </button>
           </div>
+
         </div>
         {isInvalidCredentials && (
           <p className="inv-cred">Invalid credentials</p>
