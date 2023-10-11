@@ -94,8 +94,10 @@ export default function Listening() {
           </tbody>
         </table>
       </div>
-      <button onClick={() => setPage((prev) => prev < maxPage ? prev + 1 : maxPage)}>Next</button>
-      <button onClick={() => setPage((prev) => prev > 0 ? prev - 1 : 1)}>Prev</button>
+      <div className='btns'>
+      <button className='btn' onClick={() => setPage((prev) => prev < maxPage ? prev + 1 : maxPage)}>Next</button>
+      <button className='btn' onClick={() => setPage((prev) => prev > 0 ? prev - 1 : 1)}>Prev</button>
+      </div>
 
     </div>
   );

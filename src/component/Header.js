@@ -1,30 +1,24 @@
+// Header.js
+
 import React from 'react';
-import './Header.css'; // Create a CSS file for styling
+import './Header.css';
 import Logo from '../assists/Logo.svg';
-// import headerbg from '../assists/Header-bg.svg'
 import { FaArrowLeft } from 'react-icons/fa';
-import Oval from '../assists/Oval.svg';
+import { useHeader } from '../HeaderContext';
 
 function Header() {
+  const { title } = useHeader(); // Access the title from the context
+
   return (
     <header className="header">
-       {/* <img src={Oval} className='oval' /> */}
-     
-      {/* <img src={headerbg} /> */}
-      <div className='text'>
-<FaArrowLeft />
-  <p className='text-para'>Create Project</p> 
-</div>
+      <div className="text">
+        <FaArrowLeft />
+        <p className="text-para">{title}</p>
+      </div>
 
-<img className="Logo-img"  src={Logo} /> 
+      <img className="Logo-img" src={Logo} />
     </header>
   );
 }
 
 export default Header;
-
-
-
- 
-
-

@@ -13,6 +13,19 @@ tbody{
   background-color: white;
 }
 
+.btns{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.btn{
+  border-radius: 5px;
+  width: 100px;
+  height: 50px;
+margin: 20px;
+}
+
 .td-btn1{
   background-color: blue;
     width: 75px;
@@ -61,3 +74,4 @@ td {
 tr{
   border: 1px solid #ebdfdf;
 }
+

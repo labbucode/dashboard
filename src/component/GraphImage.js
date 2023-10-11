@@ -1,5 +1,6 @@
 import React from 'react'
 import '../component/GraphImage.css'
+import RateCharts from './RateCharts'
 
 export default function GraphImage() {
   return (
@@ -31,7 +32,7 @@ export default function GraphImage() {
     <div>
         <h4>Department wise - Total Vs Closed</h4>
         <div className='Graph-Container'>
-            the
+        <RateCharts />
         </div>
     </div>
     </>
