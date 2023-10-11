@@ -1,11 +1,27 @@
-import React from 'react'
-import '../component/Listening.css'
+import React, { useEffect, useState } from 'react';
+import '../component/Listening.css';
+import axios from 'axios';
 
 export default function Listening() {
+  const [lists, setLists] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    axios.get("https://backend-bbi9.onrender.com/listings")
+      .then((response) => {
+        setLists(response.data);
+        setLoading(false); // Set loading to false once data is fetched
+      })
+      .catch((error) => {
+        console.error('Error fetching data:', error);
+        setLoading(false); // Set loading to false in case of an error
+      });
+  }, []);
+
   return (
     <div className='Listening-container'>
       <input placeholder='Search' className='search-input' />
-      <div class="container">
+      <div className="container">
         <table>
           <thead>
             <tr>
@@ -21,39 +37,31 @@ export default function Listening() {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td><p>Line Filter</p><p>jun-21, 2020 to Jan-01, 2021</p></td>
-              <td>Bussiness</td>
-              <td>Internal</td>
-              <td>Compressor</td>
-              <td>Quality A</td>
-              <td>High</td>
-              <td>Startegy</td>
-              <td>Pune</td>
-              <td>Running</td>
-              <td><button className='td-btn1'>Start</button></td>
-              <td><button className='td-btn'>Close</button></td>
-              <td><button className='td-btn'>Cancel</button></td>
-
-            </tr>
-            <tr>
-              <td>Line Filter</td>
-              <td>Bussiness</td>
-              <td>Internal</td>
-              <td>Compressor</td>
-              <td>Quality A</td>
-              <td>High</td>
-              <td>Startegy</td>
-              <td>Pune</td>
-              <td>Running</td>
-              <td><button className='td-btn1'>Start</button></td>
-              <td><button className='td-btn'>Close</button></td>
-              <td><button className='td-btn'>Cancel</button></td>
-
-            </tr>
+            {loading ? (
+              <tr>
+                <td colSpan="10">Loading...</td>
+              </tr>
+            ) : (
+              lists.map((item, index) => (
+                <tr key={index}>
+                  <td>{item.project_name}</td>
+                  <td>{item.reason}</td>
+                  <td>{item.type}</td>
+                  <td>{item.division}</td>
+                  <td>{item.category}</td>
+                  <td>{item.proiority}</td>
+                  <td>{item.department}</td>
+                  <td>{item.location}</td>
+                  <td>{item.status}</td>
+                  <td><button className='td-btn1'>Start</button></td>
+                  <td><button className='td-btn'>Close</button></td>
+                  <td><button className='td-btn'>Cancel</button></td>
+                </tr>
+              ))
+            )}
           </tbody>
         </table>
       </div>
     </div>
-  )
+  );
 }

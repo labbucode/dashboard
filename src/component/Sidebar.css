@@ -8,6 +8,10 @@
    
     
   }
+  .active{
+    background-color: blue;
+  }
+  
 
   .exit-icon{
     position: absolute;

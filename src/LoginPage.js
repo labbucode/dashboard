@@ -9,6 +9,7 @@ import axios, { Axios } from 'axios';
 
 
 function LoginPage() {
+  const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
@@ -21,7 +22,14 @@ function LoginPage() {
       setIsInvalidCredentials(true)
     } else {
      axios.post("https://backend-bbi9.onrender.com/auth/login",{"email":email,"password":password})
-      .then(data => console.log(data)).catch(err=>{
+      .then(data => {
+        localStorage.setItem("token", data.access)
+        navigate("/dashboard/createproject")
+
+
+
+      }
+      ).catch(err=>{
         console.log(err);
       }) 
     }
