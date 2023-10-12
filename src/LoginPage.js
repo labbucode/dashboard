@@ -19,10 +19,11 @@ function LoginPage() {
   const handleLogin = (e) => {
     e.preventDefault()
     setIsLoading(true);
-
     setIsInvalidCredentials(false)
+    
     if (email === "" || password === "") {
       setIsInvalidCredentials(true)
+      setIsLoading(false);
     } else {
       axios.post("https://backend-bbi9.onrender.com/auth/login", { "email": email, "password": password })
         .then(data => {
