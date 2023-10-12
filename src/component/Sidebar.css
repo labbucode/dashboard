@@ -1,11 +1,10 @@
-/* Sidebar.css */
+
 .sidebar {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: #fff; /* Sidebar background color */
-    height: 100vh; /* Adjust the height as needed */
-   
+    background-color: #fff;
+    height: 100vh; 
     
   }
   .active{
@@ -30,6 +29,5 @@
     cursor: pointer;
   }
   
-  /* Style each individual icon if needed */
 
   

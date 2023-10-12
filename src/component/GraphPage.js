@@ -7,6 +7,13 @@ import HighchartsReact from 'highcharts-react-official';
 
 export default function GraphImage() {
 
+  const [stats,setStats] = useState({});
+
+  useEffect(() => {
+    axios.get('https://backend-bbi9.onrender.com/listings/stats')
+    .then((response) => setStats(response.data));
+  },[])
+
   const options = {
     chart: {
       type: 'column',
@@ -37,12 +44,7 @@ export default function GraphImage() {
     ],
   };
 
-  const [stats,setStats] = useState({});
-
-  useEffect(() => {
-    axios.get('https://backend-bbi9.onrender.com/listings/stats')
-    .then((response) => setStats(response.data));
-  },[])
+  
 
   return (
     <>

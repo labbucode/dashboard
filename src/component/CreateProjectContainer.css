@@ -23,7 +23,7 @@
 }
 
 .Project-Head-btn:hover{
-    background-color: white; /* Change this to the desired background color */
+    background-color: white;
     color:  blue; 
     border: 1px solid blue;
 }
