@@ -22,7 +22,7 @@ export default function GraphImage() {
       text: 'Department-Wise Success - Total Vs Closed',
     },
     xAxis: {
-      categories: ['STR', 'FIN', 'QLT', 'MAN', 'STO', 'HR'],
+      categories: [''],
     },
     yAxis: {
       title: {
@@ -34,11 +34,11 @@ export default function GraphImage() {
     series: [
       {
         name: 'Total',
-        data: [19, 7, 9, 15, 6],
+        data: [ stats.total],
       },
       {
         name: 'Closed',
-        data: [14, 6, 8, 15, 7],
+        data: [stats.Closed],
       },
       
     ],

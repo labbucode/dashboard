@@ -38,9 +38,6 @@ function LoginPage() {
     }
   };
 
-
-
-
   return (
     <>
       <div className="blue-box">
