@@ -20,7 +20,7 @@ export default function Listening() {
         setLists(response.data.data);
         setMaxPage(response.data.totalPages);
         setLoading(false);
-        filterLists(response.data.data, searchText); // Filter the data when it's loaded
+        filterLists(response.data.data, searchText);
       })
       .catch((error) => {
         console.error('Error fetching data:', error);
@@ -29,7 +29,6 @@ export default function Listening() {
   }, [page, searchText]);
 
   const filterLists = (data, filter) => {
-    // Use filter to match data against the search text
     const filteredData = data.filter((item) => {
       const values = Object.values(item);
       return values.some((value) =>
@@ -49,7 +48,6 @@ export default function Listening() {
         const indexToUpdate = lists.findIndex(item => item._id === updatedDocument._id);
 
         if (indexToUpdate !== -1) {
-
           const updatedLists = [...lists];
           updatedLists[indexToUpdate] = updatedDocument;
           setFilteredLists(updatedLists);
@@ -58,9 +56,7 @@ export default function Listening() {
     } catch (err) {
 
     }
-
   }
-
 
 
   return (
