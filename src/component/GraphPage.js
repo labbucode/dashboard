@@ -5,15 +5,15 @@ import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 
 
-
-
 export default function GraphImage() {
 
   const options = {
     chart: {
       type: 'column',
     },
-    
+    title: {
+      text: 'Department-Wise Success - Total Vs Closed',
+    },
     xAxis: {
       categories: ['STR', 'FIN', 'QLT', 'MAN', 'STO', 'HR'],
     },
@@ -26,11 +26,11 @@ export default function GraphImage() {
     },
     series: [
       {
-        name: 'Department A (Total Target)',
+        name: 'Total',
         data: [19, 7, 9, 15, 6],
       },
       {
-        name: 'Department A (Complete Target)',
+        name: 'Closed',
         data: [14, 6, 8, 15, 7],
       },
       
@@ -68,9 +68,8 @@ export default function GraphImage() {
           <p className='p'>{stats.Cancelled}</p>
         </div>      
     </div>
-    <div>
-        <h4>Department wise - Total Vs Closed</h4>
-        <div className="chart-container">
+    <div className="chart-container" >
+        <div className="chart">
         <HighchartsReact highcharts={Highcharts} options={options} />
     </div>
     </div>
