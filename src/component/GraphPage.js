@@ -13,29 +13,27 @@ export default function GraphImage() {
     chart: {
       type: 'column',
     },
-    title: {
-      text: 'Department-Wise Success Percentage of Projects',
-    },
+    
     xAxis: {
-      categories: ['January', 'February', 'March', 'April', 'May'],
+      categories: ['STR', 'FIN', 'QLT', 'MAN', 'STO', 'HR'],
     },
     yAxis: {
       title: {
         text: 'Success Percentage',
       },
       min: 0,
-      max: 100,
+      max: 20,
     },
     series: [
       {
         name: 'Department A (Total Target)',
-        data: [80, 75, 90, 88, 78],
+        data: [19, 7, 9, 15, 6],
       },
       {
         name: 'Department A (Complete Target)',
-        data: [70, 68, 80, 82, 75],
+        data: [14, 6, 8, 15, 7],
       },
-      // Add series for other departments in a similar format
+      
     ],
   };
 
