@@ -98,10 +98,10 @@ export default function Listening() {
         <label>Sort By:</label>
         <select onChange={handleSortChange}>
           <option value="">None</option>
+          <option value="priority">Priority</option>
           <option value="project_name">Project Name</option>
           <option value="status">Status</option>
           <option value="location">Location</option>
-          {/* Add more options for other columns */}
         </select>
 </div>
       </div>

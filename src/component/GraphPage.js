@@ -13,73 +13,6 @@ export default function GraphImage() {
     .then((response) => setStats(response.data));
   },[])
 
-
-  const [chartOptions, setChartOptions] = useState({});
-
-  useEffect(() => {
-
-    const projectData = [
-      { department: 'Total', status: 'Closed' },
-      { department: 'Closed', status: 'Closed' },
-      { department: 'closed', status: 'Open' },
-      { department: 'Total', status: 'Closed' },
-      { department: 'Total', status: 'Closed' },
-      { department: 'closed', status: 'Open' },
-    ];
-
-    
-    const departmentSuccess = {};
-    const totalProjectsByDepartment = {};
-    const closedProjectsByDepartment = {};
-
-    projectData.forEach((project) => {
-      const department = project.department;
-      totalProjectsByDepartment[department] = (totalProjectsByDepartment[department] || 0) + 1;
-      if (project.status === 'Closed') {
-        closedProjectsByDepartment[department] = (closedProjectsByDepartment[department] || 0) + 1;
-      }
-    });
-
-    for (const department in totalProjectsByDepartment) {
-      const totalProjects = totalProjectsByDepartment[department];
-      const closedProjects = closedProjectsByDepartment[department];
-      departmentSuccess[department] = (closedProjects / totalProjects) * 100;
-    }
-
-
-    const chartData = Object.keys(departmentSuccess).map((department) => ({
-      name: department,
-      y: departmentSuccess[department],
-    }));
-
-    const options = {
-      chart: {
-        type: 'column',
-      },
-
-      title: {
-        text: '',
-      },
-
-      xAxis: {
-        categories: Object.keys(departmentSuccess),
-      },
-      yAxis: {
-        title: {
-          text: '',
-        },
-      },
-      series: [
-        {
-          name: '',
-          
-        },
-      ],
-    };
-
-    setChartOptions(options);
-  }, []);
-
   return (
     <>
     <div className='Graph-Page'>
@@ -106,9 +39,9 @@ export default function GraphImage() {
     </div>
     <div>
         <h4>Department wise - Total Vs Closed</h4>
-        <div className='Graph-Container'>
-        <HighchartsReact highcharts={Highcharts} options={chartOptions} />
-        </div>
+        <div className="chart-container">
+      
+    </div>
     </div>
     </>
   )
