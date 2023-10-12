@@ -31,7 +31,9 @@ function LoginPage() {
           navigate("/dashboard/createproject")
         }
         ).catch(err => {
+          setIsInvalidCredentials(true)
           console.log(err);
+          setIsLoading(false);
         })
     }
   };
