@@ -10,6 +10,8 @@ export default function Listening() {
   const [maxPage, setMaxPage] = useState(1);
   const [searchText, setSearchText] = useState('');
   const [filteredLists, setFilteredLists] = useState([]);
+  const [sortKey, setSortKey] = useState(null);
+  const [sortOrder, setSortOrder] = useState('asc');
 
 
 
@@ -20,15 +22,15 @@ export default function Listening() {
         setLists(response.data.data);
         setMaxPage(response.data.totalPages);
         setLoading(false);
-        filterLists(response.data.data, searchText);
+        filterAndSortLists(response.data.data, searchText);
       })
       .catch((error) => {
         console.error('Error fetching data:', error);
         setLoading(false);
       });
-  }, [page, searchText]);
+  }, [page, searchText, sortKey, sortOrder]);
 
-  const filterLists = (data, filter) => {
+  const filterAndSortLists = (data, filter) => {
     const filteredData = data.filter((item) => {
       const values = Object.values(item);
       return values.some((value) =>
@@ -36,10 +38,32 @@ export default function Listening() {
       );
     });
 
-    setFilteredLists(filteredData);
+    const sortedData = [...filteredData];
+
+    if (sortKey) {
+      sortedData.sort((a, b) => {
+        const aValue = a[sortKey];
+        const bValue = b[sortKey];
+        if (sortOrder === 'asc') {
+          return aValue.localeCompare(bValue);
+        } else {
+          return bValue.localeCompare(aValue);
+        }
+      });
+    }
+
+    setFilteredLists(sortedData);
   };
 
+  const handleSortChange = (e) => {
+    const selectedKey = e.target.value;
+    setSortKey(selectedKey);
+  };
 
+  const handleSortOrderChange = (e) => {
+    const selectedOrder = e.target.value;
+    setSortOrder(selectedOrder);
+  };
   const handleStatus = async (status, id) => {
     try {
       const response = await axios.put("https://backend-bbi9.onrender.com/listings/status", { status, id });
@@ -62,12 +86,26 @@ export default function Listening() {
   return (
     <div className='Listening-container'>
 
+<div className='sort-search'>
       <input
         placeholder="Search"
         className="search-input"
         value={searchText}
         onChange={(e) => setSearchText(e.target.value)}
       />
+
+<div className="sort-controls">
+        <label>Sort By:</label>
+        <select onChange={handleSortChange}>
+          <option value="">None</option>
+          <option value="project_name">Project Name</option>
+          <option value="status">Status</option>
+          <option value="location">Location</option>
+          {/* Add more options for other columns */}
+        </select>
+</div>
+      </div>
+
 
       <div className="container">
         <table>
