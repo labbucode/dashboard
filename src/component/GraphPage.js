@@ -4,7 +4,40 @@ import axios from 'axios'
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 
+
+
+
 export default function GraphImage() {
+
+  const options = {
+    chart: {
+      type: 'column',
+    },
+    title: {
+      text: 'Department-Wise Success Percentage of Projects',
+    },
+    xAxis: {
+      categories: ['January', 'February', 'March', 'April', 'May'],
+    },
+    yAxis: {
+      title: {
+        text: 'Success Percentage',
+      },
+      min: 0,
+      max: 100,
+    },
+    series: [
+      {
+        name: 'Department A (Total Target)',
+        data: [80, 75, 90, 88, 78],
+      },
+      {
+        name: 'Department A (Complete Target)',
+        data: [70, 68, 80, 82, 75],
+      },
+      // Add series for other departments in a similar format
+    ],
+  };
 
   const [stats,setStats] = useState({});
 
@@ -40,7 +73,7 @@ export default function GraphImage() {
     <div>
         <h4>Department wise - Total Vs Closed</h4>
         <div className="chart-container">
-      
+        <HighchartsReact highcharts={Highcharts} options={options} />
     </div>
     </div>
     </>
