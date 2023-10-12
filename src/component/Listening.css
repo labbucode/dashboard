@@ -36,8 +36,8 @@ margin: 20px;
 
 .td-btn1:active,
 .td-btn:active {
-  background-color: #555; /* Change this to the desired background color */
-  color: white; /* Change this to the desired text color */
+  background-color: #555; 
+  color: white; 
   cursor: pointer;
 }
 
