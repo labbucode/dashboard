@@ -183,3 +183,31 @@
       left: 100px;
   }
 }
+
+@media (min-width: 700px) and (max-width: 930px) {
+  .blue-box {
+    width: 100vw;
+      background-color: blue;
+      z-index: -1;
+      border-bottom-left-radius: 35px;
+  }
+  .OvalIcon {
+    position: relative;
+    top: -100px;
+    max-width: 67%;
+  }
+  .logo{
+    position: absolute;
+    top: 27px;
+    right: 309px;
+  }
+  .login-form{
+    width: 75%;
+    height: 59%;
+}
+.show-password-button {
+  position: relative;
+  bottom: 30px;
+  left: 272px;
+}
+  }
