@@ -144,3 +144,43 @@
     align-items: center;
     flex-direction: column;
 }
+
+@media (max-width: 668px) {
+  
+  .login-form {
+      width: 60%;   
+  }
+  .blue-box {
+  width: 100vw;
+    background-color: blue;
+    z-index: -1;
+    border-bottom-left-radius: 35px;
+}
+.logo{
+  top: 5px;
+  left: 6px;
+}
+.logo img{
+  width: 45px;
+    height: 55px;
+}
+.logo p{
+  font-size: small;
+  
+}
+.OvalIcon {
+  position: relative;
+  max-width: 0%;
+}
+
+.login-container {
+  height: 60vh;
+ position: relative;
+ top: 100px;
+}
+  .show-password-button {
+      position: relative;
+      bottom: 0;
+      left: 0;
+  }
+}
