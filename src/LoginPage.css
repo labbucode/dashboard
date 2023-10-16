@@ -157,8 +157,7 @@
     border-bottom-left-radius: 35px;
 }
 .logo{
-  top: 5px;
-  left: 6px;
+  top: 35px;
 }
 .logo img{
   width: 45px;
@@ -174,7 +173,7 @@
 }
 
 .login-container {
-  height: 60vh;
+  height: 70vh;
  position: relative;
  top: 100px;
 }
