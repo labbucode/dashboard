@@ -148,7 +148,7 @@
 @media (max-width: 668px) {
   
   .login-form {
-      width: 60%;   
+      width: 76%;   
   }
   .blue-box {
   width: 100vw;
@@ -179,7 +179,7 @@
 }
   .show-password-button {
       position: relative;
-      bottom: 0;
-      left: 0;
+      bottom: 30px;
+      left: 100px;
   }
 }
