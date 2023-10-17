@@ -6,15 +6,15 @@ export default function CreateProjectContainer() {
   const [formData, setFormData] = useState({
     theme: '',
     reason: '',
-    type: 'Internal',
-    division: 'Compressor',
-    category: 'Quality A',
-    priority: 'High',
-    department: 'Startegy',
+    type: '',
+    division: '',
+    category: '',
+    priority: '',
+    department: '',
     startDate: '',
     endDate: '',
-    location: 'Pune',
-    status: ''
+    location: '',
+    status: 'Registered'
   });
 
   const [isLoading, setIsLoading] = useState(false);
@@ -29,9 +29,15 @@ export default function CreateProjectContainer() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Check if the start date is greater than the end date
+    for (const key in formData) {
+      if (formData[key] === '' ) {
+        alert(`Please fill in the ${key} field.`);
+        return; 
+      }
+    }
+
     if (new Date(formData.startDate) > new Date(formData.endDate)) {
-      setDateError('Start date cannot be greater than the end date.');
+      setDateError('end date is less than start date');
       return;
     } else {
       setDateError('');
@@ -83,13 +89,14 @@ export default function CreateProjectContainer() {
                 id='reason'
                 value={formData.reason}
                 onChange={handleInputChange}
-                defaultValue="Select reason"
+                
               >
                 <option disabled value="">Select reason</option>
                 <option>Business</option>
                 <option>Dealership</option>
                 <option>Transport</option>
               </select>
+              
             </div>
             <div>
               <label htmlFor='type' style={{ color: 'gray' }}>
@@ -101,6 +108,7 @@ export default function CreateProjectContainer() {
                 value={formData.type}
                 onChange={handleInputChange}
               >
+                 <option disabled value="">Select type</option>
                 <option>Internal</option>
                 <option>External</option>
                 <option>Vendor</option>
@@ -116,6 +124,7 @@ export default function CreateProjectContainer() {
                 value={formData.division}
                 onChange={handleInputChange}
               >
+                 <option disabled value="">Select division</option>
                 <option>Compressor</option>
                 <option>Filters</option>
                 <option>Pumps</option>
@@ -133,6 +142,7 @@ export default function CreateProjectContainer() {
                 value={formData.category}
                 onChange={handleInputChange}
               >
+                <option disabled value="">Select category</option>
                 <option>Quality A</option>
                 <option>Quality B</option>
                 <option>Quality C</option>
@@ -149,6 +159,7 @@ export default function CreateProjectContainer() {
                 value={formData.priority}
                 onChange={handleInputChange}
               >
+                <option disabled value="">Select priority</option>
                 <option>High</option>
                 <option>Medium</option>
                 <option>Low</option>
@@ -164,6 +175,7 @@ export default function CreateProjectContainer() {
                 value={formData.department}
                 onChange={handleInputChange}
               >
+                <option disabled value="">Select department</option>
                 <option>Startegy</option>
                 <option>Finance</option>
                 <option>Quality</option>
@@ -195,8 +207,9 @@ export default function CreateProjectContainer() {
               value={formData.endDate}
               onChange={handleInputChange}
             />
+            {dateError && <p className="error-text">{dateError}</p>}
           </div>
-          {dateError && <p className="error-text">{dateError}</p>}
+          
           <div>
               <label htmlFor='location' style={{ color: 'gray' }}>
                 Location
@@ -207,6 +220,7 @@ export default function CreateProjectContainer() {
                 value={formData.location}
                 onChange={handleInputChange}
               >
+                <option disabled value="">Select location</option>
                 <option>Pune</option>
                 <option>Delhi</option>
                 <option>Mumbai</option>

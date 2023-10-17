@@ -130,7 +130,9 @@ export default function Listening() {
             ) : (
               filteredLists.map((item, index) => (
                 <tr key={index}>
-                  <td>{item.project_name}</td>
+                  <td>{item.project_name}
+                  <div>{item.startDate} to {item.lastDate}</div>
+                  </td>
                   <td>{item.reason}</td>
                   <td>{item.type}</td>
                   <td>{item.division}</td>
