@@ -22,11 +22,7 @@
     padding: 10px;
 }
 
-.Project-Head-btn:hover{
-    background-color: white;
-    color:  blue; 
-    border: 1px solid blue;
-}
+
 
 .Project-Head-btn{
     cursor: pointer;

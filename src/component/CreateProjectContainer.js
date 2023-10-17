@@ -5,20 +5,21 @@ import axios from 'axios';
 export default function CreateProjectContainer() {
   const [formData, setFormData] = useState({
     theme: '',
-    reason: 'Business',
+    reason: '',
     type: 'Internal',
     division: 'Compressor',
     category: 'Quality A',
     priority: 'High',
     department: 'Startegy',
-    start: '',
-    end: '',
+    startDate: '',
+    endDate: '',
     location: 'Pune',
     status: ''
   });
 
   const [isLoading, setIsLoading] = useState(false);
   const [loadingText, setLoadingText] = useState('');
+  const [dateError, setDateError] = useState('');
 
   const handleInputChange = (e) => {
     const { id, value } = e.target;
@@ -27,36 +28,40 @@ export default function CreateProjectContainer() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // Check if the start date is greater than the end date
+    if (new Date(formData.startDate) > new Date(formData.endDate)) {
+      setDateError('Start date cannot be greater than the end date.');
+      return;
+    } else {
+      setDateError('');
+    }
+
+    const content = {
+      project_name: formData.theme,
+      reason: formData.reason,
+      type: formData.type,
+      division: formData.division,
+      category: formData.category,
+      priority: formData.priority,
+      department: formData.department,
+      startDate: formData.startDate,
+      lastDate: formData.endDate,
+      location: formData.location,
+      status: 'Registered'
+    };
+
     setIsLoading(true);
-    setLoadingText('Creating...');
-
-    setTimeout(() => {
-      setIsLoading(false);
-      setLoadingText('');
-      setFormData({ ...formData, theme: '' });
-
-      const content = {
-        project_name: formData.theme,
-        reason: formData.reason,
-        type: formData.type,
-        division: formData.division,
-        category: formData.category,
-        priority: formData.priority,
-        department: formData.department,
-        location: formData.location,
-        status: 'Registered'
-      };
-
-      axios.post("https://backend-bbi9.onrender.com/listings", content)
-        .then(data => console.log(data));
-    }, 3000);
+    axios.post("https://backend-bbi9.onrender.com/listings", content)
+      .then(data => console.log(data))
+      .finally(() => setIsLoading(false));
   };
 
   return (
     <div className='wrapper'>
       <div className='Project-Container'>
         <form onSubmit={handleSubmit}>
-          <div className='Project-Head'>
+        <div className='Project-Head'>
             <input
               className='Project-Head-input'
               id='theme'
@@ -64,7 +69,7 @@ export default function CreateProjectContainer() {
               value={formData.theme}
               onChange={handleInputChange}
             />
-            <button className="Project-Head-btn" type="submit" disabled={isLoading}>
+            <button className="Project-Head-btn" type="submit" disabled={isLoading} >
               {isLoading ? loadingText : 'Start Project'}
             </button>
           </div>
@@ -78,8 +83,9 @@ export default function CreateProjectContainer() {
                 id='reason'
                 value={formData.reason}
                 onChange={handleInputChange}
+                defaultValue="Select reason"
               >
-                for Business
+                <option disabled value="">Select reason</option>
                 <option>Business</option>
                 <option>Dealership</option>
                 <option>Transport</option>
@@ -165,36 +171,33 @@ export default function CreateProjectContainer() {
                 <option>Stores</option>
               </select>
             </div>
-            <div>
-              <label
-                htmlFor='start'
-                style={{ color: 'gray' }}
-              >
-                Start Date as per Project Plan
-              </label>
-              <input
-                type='date'
-                className='Project-Main-input'
-                id='start'
-                placeholder='Enter Project Theme'
-                value={formData.start}
-                onChange={handleInputChange}
-              />
-            </div>
-            <div>
-              <label htmlFor='end' style={{ color: 'gray' }}>
-                End Date as per Project Plan
-              </label>
-              <input
-                type='date'
-                className='Project-Main-input'
-                id='end'
-                placeholder='Enter Project Theme'
-                value={formData.end}
-                onChange={handleInputChange}
-              />
-            </div>
-            <div>
+
+          <div>
+            <label htmlFor='start' style={{ color: 'gray' }}>
+              Start Date as per Project Plan
+            </label>
+            <input
+              type='date'
+              className='Project-Main-input'
+              id='startDate'
+              value={formData.startDate}
+              onChange={handleInputChange}
+            />
+          </div>
+          <div>
+            <label htmlFor='end' style={{ color: 'gray' }}>
+              End Date as per Project Plan
+            </label>
+            <input
+              type='date'
+              className='Project-Main-input'
+              id='endDate'
+              value={formData.endDate}
+              onChange={handleInputChange}
+            />
+          </div>
+          {dateError && <p className="error-text">{dateError}</p>}
+          <div>
               <label htmlFor='location' style={{ color: 'gray' }}>
                 Location
               </label>
@@ -215,6 +218,7 @@ export default function CreateProjectContainer() {
             <p>Status: Registered</p>
           </div>
 
+          
         </form>
       </div>
     </div>

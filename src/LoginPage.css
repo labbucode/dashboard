@@ -68,6 +68,9 @@
     flex-direction: row-reverse;
     margin-bottom: 15px;
   }
+  .form-group-forget-input {
+    
+  }
   
   input[type="text"],
   input[type="password"] {
@@ -112,8 +115,11 @@
     color: #777; 
   }
   .form-group-password-input{
-    margin: 0;
+    position: relative;
+    
   }
+
+
   .login-button{
     width: 60%;
     height: 30px;
@@ -143,6 +149,34 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.error-text {
+  color: red;
+  display: flex;
+  justify-content: flex-start; 
+}
+
+
+.form-group input:invalid {
+  border: 1px solid red;
+  
 }
 
 @media (max-width: 700px) {
