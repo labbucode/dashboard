@@ -110,6 +110,7 @@ function LoginPage() {
 
             
             <button
+             type="button"
               className="show-password-button"
               onClick={() => setShowPassword(!showPassword)}
             >
