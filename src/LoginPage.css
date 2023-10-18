@@ -197,8 +197,7 @@
     background-color: #fff
   }
   .login-form {
-    height: auto;
-    margin: auto;
+    margin: 0;
     padding: 13px;
     background-color: transparent;
     box-shadow: 0px 0px 0px;

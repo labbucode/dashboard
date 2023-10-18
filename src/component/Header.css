@@ -1,17 +1,26 @@
 .header{
- height: 9rem; 
+ height: 6rem; 
  background-color: blue;
- border-bottom-left-radius: 30px;
+ border-bottom-left-radius: 50px;
 }
-
+.Logo-oval{
+      height: 254px;
+      position: absolute;
+      top: -13px;
+      right: 27%;
+      z-index: -1;
+}
 .Logo-img{
-  position: relative;
-  left: 45%;
+  width: 70px;
+    height: 43px;
+    position: relative;
+    left: 48%;
+    top: -7px;
 }
 .text{
   position: relative;
-  top: 39%;
-  left: 7%;
+  top: 22%;
+  left: 3%;
   color: #fff;
 }
 .oval{

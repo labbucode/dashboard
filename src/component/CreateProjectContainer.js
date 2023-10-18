@@ -73,7 +73,9 @@ export default function CreateProjectContainer() {
       <div className='Project-Container'>
         <form onSubmit={handleSubmit}>
         <div className='Project-Head'>
-            <input
+            
+            <textarea
+            rows="2"
               className='Project-Head-input'
               id='theme'
               placeholder='Enter Project Theme'
@@ -86,7 +88,7 @@ export default function CreateProjectContainer() {
           </div>
           <div className='Project-Main'>
             <div>
-              <label htmlFor='reason' style={{ color: 'gray' }}>
+              <label htmlFor='reason' className='label'>
                 Reason
               </label>
               <select
@@ -104,7 +106,7 @@ export default function CreateProjectContainer() {
               
             </div>
             <div>
-              <label htmlFor='type' style={{ color: 'gray' }}>
+              <label htmlFor='type' className='label'>
                 Type
               </label>
               <select
@@ -120,7 +122,7 @@ export default function CreateProjectContainer() {
               </select>
             </div>
             <div>
-              <label htmlFor='division' style={{ color: 'gray' }}>
+              <label htmlFor='division' className='label'>
                 Division
               </label>
               <select
@@ -138,7 +140,7 @@ export default function CreateProjectContainer() {
               </select>
             </div>
             <div>
-              <label htmlFor='category' style={{ color: 'gray' }}>
+              <label htmlFor='category' className='label'>
                 Category
               </label>
               <select
@@ -155,7 +157,7 @@ export default function CreateProjectContainer() {
               </select>
             </div>
             <div>
-              <label htmlFor='priority' style={{ color: 'gray' }}>
+              <label htmlFor='priority' className='label'>
                 Priority
               </label>
               <select
@@ -171,7 +173,7 @@ export default function CreateProjectContainer() {
               </select>
             </div>
             <div>
-              <label htmlFor='department' style={{ color: 'gray' }}>
+              <label htmlFor='department' className='label'>
                 Department
               </label>
               <select
@@ -190,7 +192,7 @@ export default function CreateProjectContainer() {
             </div>
 
           <div>
-            <label htmlFor='start' style={{ color: 'gray' }}>
+            <label htmlFor='start' className='label'>
               Start Date as per Project Plan
             </label>
             <input
@@ -202,7 +204,7 @@ export default function CreateProjectContainer() {
             />
           </div>
           <div>
-            <label htmlFor='end' style={{ color: 'gray' }}>
+            <label htmlFor='end' className='label'>
               End Date as per Project Plan
             </label>
             <input
@@ -216,7 +218,7 @@ export default function CreateProjectContainer() {
           </div>
           
           <div>
-              <label htmlFor='location' style={{ color: 'gray' }}>
+              <label htmlFor='location' className='label'>
                 Location
               </label>
               <select
@@ -234,7 +236,7 @@ export default function CreateProjectContainer() {
           </div>
 
           <div className='Project-status'>
-            <p>Status: Registered</p>
+            <p>Status:<span style={{fontWeight: 500}}> Registered</span> </p>
           </div>
 
           

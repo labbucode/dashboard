@@ -1,38 +1,31 @@
-
-.sidebar {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.sidebar {    
     background-color: #fff;
-    height: 100vh; 
-    
+    height: 85vh;  
   }
   .active{
     background-color: white;
-    border-left: 10px solid blue;
-    border-right: 10px solid white;
-    border-top: 10px solid white;
-    border-bottom: 10px solid white;
+    border-left: 5px solid blue;
+    border-top: 5px solid white;
+    border-right: 5px solid white;
+    border-bottom: 5px solid white;
     border-radius: 5px;
   } 
-  
-
-  .exit-icon{
-    position: absolute;
-    bottom: 60px;
-    left: 2%;
+  .sidebar-icons{
+      position: relative;
+      top: 30%;
   }
-  
   .sidebar-icon {
     display: flex;
     align-items: center;
     justify-content: end;
-    width: 90%;
-    height: 80px;
-    color: white;
-    font-size: 24px;
+    width: 40px;
+    height: 60px;
     cursor: pointer;
   }
-  
+  .exit-icon{
+    position: absolute;
+    bottom: 20%;
+    left: 15px;
+  }
 
   

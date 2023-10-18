@@ -18,6 +18,7 @@ function Sidebar() {
   return (
     <>
       <div className="sidebar">
+        <div className='sidebar-icons'>
         <div
           onClick={() => {
             navigate('/dashboard/graph');
@@ -47,9 +48,10 @@ function Sidebar() {
         >
           <img src={location.pathname === '/dashboard/createproject' ? BluePlusIcon : PlusIcon} alt="Create Project" />
         </div>
-      </div>
+        </div>
 
-      <div className="exit-icon">
+
+        <div className="exit-icon">
         <img
           onClick={() => {
             localStorage.removeItem('access');
@@ -59,6 +61,9 @@ function Sidebar() {
           alt="Logout"
         />
       </div>
+      </div>
+
+      
     </>
   );
 }
