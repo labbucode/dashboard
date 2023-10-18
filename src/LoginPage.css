@@ -189,6 +189,13 @@
 
 @media (max-width: 700px) {
  
+  *{
+    overflow: hidden;
+  }
+  body{
+    
+    background-color: #fff
+  }
   .login-form {
     height: auto;
     margin: auto;
