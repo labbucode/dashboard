@@ -10,7 +10,12 @@ export default function GraphImage() {
   const [stats,setStats] = useState({});
 
   useEffect(() => {
-    axios.get('https://backend-bbi9.onrender.com/listings/stats')
+    const token =  localStorage.getItem('token');
+    const headerValue = {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+    }
+    axios.get('https://backend-bbi9.onrender.com/listings/stats', {headers:headerValue})
     .then((response) => setStats(response.data));
   },[])
 

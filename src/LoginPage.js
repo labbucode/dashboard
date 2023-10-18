@@ -52,9 +52,11 @@ function LoginPage() {
           password: password,
         })
         .then((data) => {
-          localStorage.setItem('token', data.access);
+          localStorage.setItem('token', data.data.access);
           navigate('/dashboard/createproject');
+       
         })
+
         .catch((err) => {
           setIsInvalidCredentials(true);
           setIsLoading(false);

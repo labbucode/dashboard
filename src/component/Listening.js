@@ -15,9 +15,16 @@ export default function Listening() {
 
 
 
-
+ 
   useEffect(() => {
-    axios.get(`https://backend-bbi9.onrender.com/listings?page=${page}&limit=${limit}`)
+
+    const token =  localStorage.getItem('token');
+    const headerValue = {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+    }
+    console.log(headerValue);
+    axios.get(`https://backend-bbi9.onrender.com/listings?page=${page}&limit=${limit}`,{headers:headerValue})
       .then((response) => {
         setLists(response.data.data);
         setMaxPage(response.data.totalPages);
@@ -25,7 +32,7 @@ export default function Listening() {
         filterAndSortLists(response.data.data, searchText);
       })
       .catch((error) => {
-        console.error('Error fetching data:', error);
+        console.log( error);
         setLoading(false);
       });
   }, [page, searchText, sortKey, sortOrder]);
@@ -64,9 +71,18 @@ export default function Listening() {
     const selectedOrder = e.target.value;
     setSortOrder(selectedOrder);
   };
+
+
+
   const handleStatus = async (status, id) => {
+    const token =  localStorage.getItem('token');
+    const headerValue = {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+    }
     try {
-      const response = await axios.put("https://backend-bbi9.onrender.com/listings/status", { status, id });
+
+      const response = await axios.put("https://backend-bbi9.onrender.com/listings/status", { status, id } , {headers:headerValue});
       if (response.status === 200) {
         const updatedDocument = response.data;
         const indexToUpdate = lists.findIndex(item => item._id === updatedDocument._id);

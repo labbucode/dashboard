@@ -58,7 +58,12 @@ export default function CreateProjectContainer() {
     };
 
     setIsLoading(true);
-    axios.post("https://backend-bbi9.onrender.com/listings", content)
+   const token =  localStorage.getItem('token');
+    const headerValue = {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+    }
+    axios.post("https://backend-bbi9.onrender.com/listings", content, {headers: headerValue})
       .then(data => console.log(data))
       .finally(() => setIsLoading(false));
   };
