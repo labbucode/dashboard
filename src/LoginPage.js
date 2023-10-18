@@ -77,7 +77,7 @@ function LoginPage() {
       <div className="login-container">
         <form className="login-form">
           <h3>Login to get started</h3>
-          <div className="form-group">
+          <div className="form-group-email">
             <label htmlFor="email">Email:</label>
             <input
               type='email'
@@ -92,8 +92,9 @@ function LoginPage() {
             />
             {emailError && <p className="error-text">{emailError}</p>}
           </div>
-          <div className="form-group-password-input">
+          <div className="form-group-password">
             <label htmlFor="password">Password:</label>
+            <div className="form-group-password-input">
             <input
               type={showPassword ? 'text' : 'password'}
               id="password"
@@ -112,9 +113,10 @@ function LoginPage() {
               className="show-password-button"
               onClick={() => setShowPassword(!showPassword)}
             >
-              {/* here */}
               {showPassword ? <FaEyeSlash /> : <FaEye />}
             </button>
+            
+          </div>
           </div>
           <div className="form-group-forget-password">
             <p className="forgot-password">Forgot Password?</p>

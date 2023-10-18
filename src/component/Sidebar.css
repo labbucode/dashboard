@@ -8,8 +8,13 @@
     
   }
   .active{
-    background-color: blue;
-  }
+    background-color: white;
+    border-left: 10px solid blue;
+    border-right: 10px solid white;
+    border-top: 10px solid white;
+    border-bottom: 10px solid white;
+    border-radius: 5px;
+  } 
   
 
   .exit-icon{

@@ -7,57 +7,46 @@ import BlueDashboardIcon from '../assists/Dashboard-active.svg';
 import ProjectListIcon from '../assists/Project-list.svg';
 import BlueProjectListIcon from '../assists/Project-list-active.svg';
 import LogoutIcon from '../assists/Logout.svg';
-import { useNavigate, NavLink } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { useHeader } from '../HeaderContext';
 
 function Sidebar() {
   const navigate = useNavigate();
-  const { setTitle } = useHeader(); 
+  const { setTitle } = useHeader();
+  const location = useLocation();
 
   return (
     <>
       <div className="sidebar">
-        <NavLink
-          to="/dashboard/graph"
-          className={({ isActive }) => {
-            if (isActive) {
-              setTitle('Dashboard');
-            }
-            return isActive ? 'active' : ' ';
+        <div
+          onClick={() => {
+            navigate('/dashboard/graph');
+            setTitle('Dashboard');
           }}
+          className={`sidebar-icon ${location.pathname === '/dashboard/graph' ? 'active' : ''}`}
         >
-          <div className="sidebar-icon">
-            <img src={DashboardIcon} />
-          </div>
-        </NavLink>
+          <img src={location.pathname === '/dashboard/graph' ? BlueDashboardIcon : DashboardIcon} alt="Dashboard" />
+        </div>
 
-        <NavLink
-          to="/dashboard/list"
-          className={({ isActive }) => {
-            if (isActive) {
-              setTitle('Project List'); 
-            }
-            return isActive ? 'active' : ' ';
+        <div
+          onClick={() => {
+            navigate('/dashboard/list');
+            setTitle('Project List');
           }}
+          className={`sidebar-icon ${location.pathname === '/dashboard/list' ? 'active' : ''}`}
         >
-          <div className="sidebar-icon">
-            <img src={ProjectListIcon} />
-          </div>
-        </NavLink>
+          <img src={location.pathname === '/dashboard/list' ? BlueProjectListIcon : ProjectListIcon} alt="Project List" />
+        </div>
 
-        <NavLink
-          to="/dashboard/createproject"
-          className={({ isActive }) => {
-            if (isActive) {
-              setTitle('Create Project'); 
-            }
-            return isActive ? 'active' : ' ';
+        <div
+          onClick={() => {
+            navigate('/dashboard/createproject');
+            setTitle('Create Project');
           }}
+          className={`sidebar-icon ${location.pathname === '/dashboard/createproject' ? 'active' : ''}`}
         >
-          <div className="sidebar-icon">
-            <img src={PlusIcon} />
-          </div>
-        </NavLink>
+          <img src={location.pathname === '/dashboard/createproject' ? BluePlusIcon : PlusIcon} alt="Create Project" />
+        </div>
       </div>
 
       <div className="exit-icon">
@@ -67,6 +56,7 @@ function Sidebar() {
             navigate('/');
           }}
           src={LogoutIcon}
+          alt="Logout"
         />
       </div>
     </>
