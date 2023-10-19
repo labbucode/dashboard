@@ -144,7 +144,7 @@ export default function Listening() {
             ) : (
               filteredLists.map((item, index) => (
                 <tr key={index}>
-                  <td> <div style={{fontWeight: 600}}> {item.project_name}</div>
+                  <td> <div style={{fontWeight: 700, color: '#312b2b'}}> {item.project_name}</div>
                   <div style={{color: 'grey'}}>{item.startDate} to {item.lastDate}</div>
                   </td>
                   <td>{item.reason}</td>
@@ -154,14 +154,12 @@ export default function Listening() {
                   <td>{item.priority}</td>
                   <td>{item.department}</td>
                   <td>{item.location}</td>
-                  <td style={{fontWeight: 600}}>{item.status}</td>
+                  <td className="status" >{item.status}</td>
                   <td>
                     <button className='td-btn1' onClick={() => handleStatus("Running", item._id)}>Start</button>
-                  </td>
-                  <td>
+               
                     <button className='td-btn' onClick={() => handleStatus("Closed", item._id)}>Close</button>
-                  </td>
-                  <td>
+                  
                     <button className='td-btn' onClick={() => handleStatus("Cancelled", item._id)}>Cancel</button>
                   </td>
                 </tr>
