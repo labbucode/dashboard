@@ -7,6 +7,7 @@
     flex-direction: column;
     border-radius: 8px
 }
+
 .Project-Head{
     display: flex;
     justify-content: space-between;
@@ -69,7 +70,7 @@
    
     width: 95%;
     margin: 9px;
-    height: 153vh;
+    height: 1017px;
     background-color: #fff;
     display: flex;
     flex-direction: column;

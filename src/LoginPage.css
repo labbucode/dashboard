@@ -189,9 +189,6 @@
 
 @media (max-width: 700px) {
  
-  .main{
-    overflow: hidden;
-  }
 
   body{
     
@@ -210,6 +207,7 @@
     background-color: blue;
     border-bottom-left-radius: 100px;
     min-height: 50vh;
+    overflow: hidden;
 }
 
 .logo{
@@ -227,10 +225,11 @@
   top: 1%;
 }
 
-
 .login-container {
-  height: 150vh;
-    position: relative;
+  position: absolute;
+  height: 350px;
+  top: 51%;
+  left: 12px;
 }
 .login-button{
   width:100%;

@@ -5,16 +5,18 @@ import LogoutIcon from '../assists/Logout.svg';
 import Oval from '../assists/Oval.svg';
 import { FaArrowLeft } from 'react-icons/fa';
 import CreateProject from '../CreateProject';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 function Header() {
- // const { title } = useHeader();
+  const navigate = useNavigate();
   const location = useLocation();
   const currUrl = location.pathname;
   const parts = currUrl.split('/');
   const lastPart = parts[parts.length-1];
 
  const title = lastPart === "list" ? "Project List": lastPart === "graph" ? "Dashboard" : "Create Project";
+
+
   return (
     <header className="header">
       <div className="text">
@@ -23,7 +25,11 @@ function Header() {
       </div>
 
       {/* <img className="Logo-oval" src={Oval} /> */}
-      <img className="Logo-logout-icon" src={LogoutIcon} />
+      <img className="Logo-logout-icon" src={LogoutIcon} onClick={() => {
+            localStorage.removeItem('access');
+            navigate('/');
+          }}/>
+
       <img className="Logo-img" src={Logo} />
     </header>
   );

@@ -1,9 +1,10 @@
-.Listening-container{
+.Listening-container {
   width: 98%;
-  margin:-1.5rem  auto 0;
-  height: 63vh;
+  margin: -1.5rem auto 0;
+  height: 82vh;
   background-color: #fff;
   border-radius: 12px;
+  overflow-y: scroll;
 }
 .table-for-mobile{
   display: none;
@@ -118,11 +119,14 @@ tr{
 
 @media (max-width: 700px) {
   .tbody{
-    overflow-x: scroll;
+    overflow-x: hidden;
   }
   .table-for-desktop{
   display: none;
  }
+ .table-for-mobile{
+  display: block;
+}
 .Listening-container {
   margin: 6px 4px;
   background-color: transparent;
