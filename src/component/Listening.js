@@ -110,7 +110,7 @@ export default function Listening() {
 
 <div className="sort-controls">
         <label style={{color: 'grey' }}>Sort By :</label>
-        <select onChange={handleSortChange} style={{border: 'none' , width: '60%'}}>
+        <select onChange={handleSortChange} style={{border: 'none' , width: '55%'}}>
           <option value="">None</option>
           <option value="priority">Priority</option>
           <option value="project_name">Project</option>
