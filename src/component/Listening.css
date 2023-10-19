@@ -48,6 +48,10 @@ margin: 20px;
   justify-content: space-between;
   padding-right: 20px;
 }
+.sort-controls{
+  display: flex;
+  align-items: center;
+}
 .td-btn1{
   background-color: blue;
     width: 75px;

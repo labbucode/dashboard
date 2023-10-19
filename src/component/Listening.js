@@ -67,10 +67,7 @@ export default function Listening() {
     setSortKey(selectedKey);
   };
 
-  const handleSortOrderChange = (e) => {
-    const selectedOrder = e.target.value;
-    setSortOrder(selectedOrder);
-  };
+  
 
 
 
@@ -112,11 +109,11 @@ export default function Listening() {
       />
 
 <div className="sort-controls">
-        <label>Sort By:</label>
-        <select onChange={handleSortChange}>
+        <label style={{color: 'grey' }}>Sort By :</label>
+        <select onChange={handleSortChange} style={{border: 'none' , width: '45%'}}>
           <option value="">None</option>
           <option value="priority">Priority</option>
-          <option value="project_name">Project Name</option>
+          <option value="project_name">Project</option>
           <option value="status">Status</option>
           <option value="location">Location</option>
         </select>
