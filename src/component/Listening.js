@@ -23,7 +23,6 @@ export default function Listening() {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${token}`
     }
-    console.log(headerValue);
     axios.get(`https://backend-bbi9.onrender.com/listings?page=${page}&limit=${limit}`,{headers:headerValue})
       .then((response) => {
         setLists(response.data.data);
