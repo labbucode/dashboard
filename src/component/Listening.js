@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import '../component/Listening.css';
 import axios from 'axios';
+import { IoIosSearch } from 'react-icons/io';
+import { FcGenericSortingDesc } from 'react-icons/fc';
+
+
 
 export default function Listening() {
   const [lists, setLists] = useState([]);
@@ -99,13 +103,25 @@ export default function Listening() {
     <>
     <div className='Listening-container'>
 
+
 <div className='sort-search'>
+<div >
+<IoIosSearch style={{
+    position: 'relative',
+    top: '3px',
+    right: '-17px',
+}
+} />
+
       <input
         placeholder="Search"
         className="search-input"
         value={searchText}
         onChange={(e) => setSearchText(e.target.value)}
       />
+      </div>
+      <div className='sort-icons' onChange={handleSortChange}><FcGenericSortingDesc size={24} color="grey" /></div>
+      
 
 <div className="sort-controls">
         <label style={{color: 'grey' }}>Sort By :</label>
@@ -134,8 +150,8 @@ export default function Listening() {
                   <div className='td' style={{color: 'grey'}}>{item.startDate} to {item.lastDate}</div>
                   </div>
                   <div className='td'>Reason: {item.reason}</div>
-                  <div className='td'>Type: {item.type} . Category:{item.category}</div>
-                  <div className='td'>Div: {item.division} . Dept: {item.department}</div>
+                  <div className='td'>Type: {item.type} <span className="dot-icon"></span>Category: {item.category}</div>
+                  <div className='td'>Div: {item.division} <span className="dot-icon"></span>Dept: {item.department}</div>
                   <div className='td'>Location: {item.location}</div>
                   <div className='td'>Priority: {item.priority}</div>
                   <div className="status" >{item.status}</div>
@@ -197,7 +213,10 @@ export default function Listening() {
         </table>
       </div>
     </div>
-     
+    <div className='btns'>
+     <button className='btn' onClick={() => setPage((prev) => prev < maxPage ? prev + 1 : maxPage)}>Next</button>
+     <button className='btn' onClick={() => setPage((prev) => prev > 0 ? prev - 1 : 1)}>Prev</button>
+   </div>
    </>
   );
 }

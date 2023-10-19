@@ -9,6 +9,19 @@
 .table-for-mobile{
   display: none;
 }
+.sort-icons{
+  display: none;
+}
+
+.dot-icon {
+  width: 8px;
+  height: 8px;
+  background-color: grey; 
+  border-radius: 50%; 
+  display: inline-block;
+  margin-right: 5px; 
+}
+
 
 #thead{
   background-color: red;
@@ -26,15 +39,12 @@ tbody{
   text-align: center;
 }
 
-
-
-.btn{
+.btn {
   border-radius: 5px;
-  width: 100px;
-  height: 50px;
-margin: 20px;
+  width: 93px;
+  height: 22px;
+  margin: 8px;
 }
-
 .btn:hover {
   background-color: #555; 
   color: white; 
@@ -85,13 +95,13 @@ margin: 20px;
   font-weight: 700;
 }
 
-.search-input{  
-  width: 25%;
+.search-input {
+  width: 80%;
   margin: 2%;
   border: none;
   outline: none;
-  border-bottom: 1px solid #ccc; 
-  padding: 5px;
+  border-bottom: 1px solid #ccc;
+  padding: 7px 20px;
   transition: border-color 0.3s;
 }
 
@@ -127,13 +137,17 @@ tr{
  .table-for-mobile{
   display: block;
 }
+.sort-icons{
+  display: block;
+}
 .Listening-container {
   margin: 6px 4px;
   background-color: transparent;
   border-radius: 12px;
 }
 .search-input {
-  width: 50%;
+  padding-left: 15px;
+  width: 85%;
   background: #f3f4f5;
 }
 .tr{
@@ -148,6 +162,12 @@ tr{
     position: relative;
     left: 80%;
     bottom: 185px;
+}
+.sort-controls{
+  display: none;
+}
+.btns{
+  display: none;
 }
 
 .td{
