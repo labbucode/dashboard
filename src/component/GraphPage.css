@@ -42,3 +42,18 @@
     width: 50%;
   }
   
+  @media (max-width: 700px) {
+    .chart{
+      width: 92%;
+    }
+    .Graph-Page {
+      margin: 10px;
+  }
+  .para{
+    margin: 5px 0 -8px 15px;
+  }
+  .chart-container{
+    height: 62vh;
+    
+  }
+  }
