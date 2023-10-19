@@ -27,9 +27,10 @@
     border-radius: 5px;
   }
 
-  .p{
-    margin: 10px;
-    font-size: xx-large;
+  .para{
+    margin: 17px;
+    font-size: unset;
+    font-weight: 600;
   }
 
   .chart{

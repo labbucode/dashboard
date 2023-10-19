@@ -23,9 +23,7 @@ export default function GraphImage() {
     chart: {
       type: 'column',
     },
-    title: {
-      text: 'Department-Wise Success - Total Vs Closed',
-    },
+    
     xAxis: {
       categories: [''],
     },
@@ -81,6 +79,7 @@ export default function GraphImage() {
         </div>      
     </div>
     <div className="chart-container" >
+    <p className='para'>Department-Wise Success - Total Vs Closed</p>
         <div className="chart">
         <HighchartsReact highcharts={Highcharts} options={options} />
     </div>
