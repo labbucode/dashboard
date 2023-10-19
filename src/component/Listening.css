@@ -5,8 +5,12 @@
   background-color: #fff;
   border-radius: 12px;
 }
+.table-for-mobile{
+  display: none;
+}
 
-thead{
+#thead{
+  background-color: red;
   text-align: left;
 }
 
@@ -113,12 +117,12 @@ tr{
 }
 
 @media (max-width: 700px) {
-  tbody{
+  .tbody{
     overflow-x: scroll;
   }
-thead {
- 
-}
+  .table-for-desktop{
+  display: none;
+ }
 .Listening-container {
   margin: 6px 4px;
   background-color: transparent;
@@ -128,20 +132,21 @@ thead {
   width: 50%;
   background: #f3f4f5;
 }
-tr {
+.tr{
   padding: 10px;
   display: flex;
   border: 1px solid #ebdfdf;
   flex-direction: column;
+  background-color: white;
 }
 
 .status {
     position: relative;
     left: 80%;
-    bottom: 200px;
+    bottom: 185px;
 }
 
-td{
+.td{
   padding: 3px;
 }
 }

@@ -122,7 +122,35 @@ export default function Listening() {
 
 
       <div className="container">
-        <table>
+      <div className='table-for-mobile'>
+      <div className='tbody'>
+            {loading ? (
+              
+                <td colSpan="10">Loading...</td>
+              
+            ) : (
+              filteredLists.map((item, index) => (
+                <div className='tr' key={index}>
+                  <div className='td'> <div style={{fontWeight: 700, color: '#312b2b'}}> {item.project_name}</div>
+                  <div className='td' style={{color: 'grey'}}>{item.startDate} to {item.lastDate}</div>
+                  </div>
+                  <div className='td'>Reason: {item.reason}</div>
+                  <div className='td'>Type: {item.type} . Category:{item.category}</div>
+                  <div className='td'>Div: {item.division} . Dept: {item.department}</div>
+                  <div className='td'>Location: {item.location}</div>
+                  <div className='td'>Priority: {item.priority}</div>
+                  <div className="status" >{item.status}</div>
+                  <div className='td'>
+                    <button className='td-btn1' onClick={() => handleStatus("Running", item._id)}>Start</button>
+                    <button className='td-btn' onClick={() => handleStatus("Closed", item._id)}>Close</button>
+                    <button className='td-btn' onClick={() => handleStatus("Cancelled", item._id)}>Cancel</button>
+                  </div>
+                </div>
+              ))
+            )}
+          </div>
+      </div>
+        <table className='table-for-desktop'>
           <thead>
             <tr>
               <th>Project Name</th>
@@ -136,6 +164,7 @@ export default function Listening() {
               <th>Status</th>
             </tr>
           </thead>
+
           <tbody>
             {loading ? (
               <tr>

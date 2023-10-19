@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Sidebar.css';
 import PlusIcon from '../assists/create-project.svg';
 import BluePlusIcon from '../assists/create-project-active.svg';
@@ -8,11 +8,9 @@ import ProjectListIcon from '../assists/Project-list.svg';
 import BlueProjectListIcon from '../assists/Project-list-active.svg';
 import LogoutIcon from '../assists/Logout.svg';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { useHeader } from '../HeaderContext';
 
 function Sidebar() {
   const navigate = useNavigate();
-  const { setTitle } = useHeader();
   const location = useLocation();
 
   return (
@@ -22,7 +20,6 @@ function Sidebar() {
         <div
           onClick={() => {
             navigate('/dashboard/graph');
-            setTitle('Dashboard');
           }}
           className={`sidebar-icon ${location.pathname === '/dashboard/graph' ? 'active' : ''}`}
         >
@@ -32,7 +29,7 @@ function Sidebar() {
         <div
           onClick={() => {
             navigate('/dashboard/list');
-            setTitle('Project List');
+           
           }}
           className={`sidebar-icon ${location.pathname === '/dashboard/list' ? 'active' : ''}`}
         >
@@ -42,7 +39,7 @@ function Sidebar() {
         <div
           onClick={() => {
             navigate('/dashboard/createproject');
-            setTitle('Create Project');
+            
           }}
           className={`sidebar-icon ${location.pathname === '/dashboard/createproject' ? 'active' : ''}`}
         >

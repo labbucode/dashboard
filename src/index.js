@@ -1,9 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-import { HeaderProvider } from './HeaderContext';
 import './index.css';
-import App from './App';
 import CreateProjectContainer from './component/CreateProjectContainer';
 import reportWebVitals from './reportWebVitals';
 import Dashboard from './pages/dash/Dashboard'
@@ -44,9 +42,9 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <HeaderProvider>
+   
       <RouterProvider router={router} />
-    </HeaderProvider>
+  
 
   </React.StrictMode>
 );
