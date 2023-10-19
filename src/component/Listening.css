@@ -1,15 +1,17 @@
 .Listening-container{
-  width: 95%;
+  width: 98%;
   margin:-1.5rem  auto 0;
-  height: 75vh;
+  height: 63vh;
   background-color: #fff;
-  display: flex;
-  flex-direction: column;
   border-radius: 12px;
 }
 
+thead{
+  text-align: left;
+}
+
 tbody{
-  text-align: center;
+  text-align:left;
   background-color: white;
 }
 
@@ -93,6 +95,7 @@ td {
   background-color: white;
   padding: 10px;
   border: none;
+  font-size: small;
 }
 tr{
   border: 1px solid #ebdfdf;

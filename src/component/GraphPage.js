@@ -45,6 +45,11 @@ export default function GraphImage() {
         name: 'Closed',
         data: [stats.Closed],
       },
+      {
+        name: 'Running',
+        data: [stats.Running],
+      },
+      
       
     ],
   };

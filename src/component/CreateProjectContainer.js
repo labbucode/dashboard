@@ -63,9 +63,25 @@ export default function CreateProjectContainer() {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${token}`
     }
-    axios.post("https://backend-bbi9.onrender.com/listings", content, {headers: headerValue})
-      .then(data => console.log(data))
-      .finally(() => setIsLoading(false));
+    axios.post("https://backend-bbi9.onrender.com/listings", content, { headers: headerValue })
+    .then(data => {
+      console.log(data);
+      // Clear the form after a successful submission
+      setFormData({
+        theme: '',
+        reason: '',
+        type: '',
+        division: '',
+        category: '',
+        priority: '',
+        department: '',
+        startDate: '',
+        endDate: '',
+        location: '',
+        status: 'Registered',
+      });
+    })
+    .finally(() => setIsLoading(false));
   };
 
   return (

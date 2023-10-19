@@ -100,6 +100,7 @@ export default function Listening() {
 
 
   return (
+    <>
     <div className='Listening-container'>
 
 <div className='sort-search'>
@@ -146,8 +147,8 @@ export default function Listening() {
             ) : (
               filteredLists.map((item, index) => (
                 <tr key={index}>
-                  <td>{item.project_name}
-                  <div>{item.startDate} to {item.lastDate}</div>
+                  <td> <div style={{fontWeight: 600}}> {item.project_name}</div>
+                  <div style={{color: 'grey'}}>{item.startDate} to {item.lastDate}</div>
                   </td>
                   <td>{item.reason}</td>
                   <td>{item.type}</td>
@@ -156,7 +157,7 @@ export default function Listening() {
                   <td>{item.priority}</td>
                   <td>{item.department}</td>
                   <td>{item.location}</td>
-                  <td>{item.status}</td>
+                  <td style={{fontWeight: 600}}>{item.status}</td>
                   <td>
                     <button className='td-btn1' onClick={() => handleStatus("Running", item._id)}>Start</button>
                   </td>
@@ -172,11 +173,13 @@ export default function Listening() {
           </tbody>
         </table>
       </div>
-      <div className='btns'>
-        <button className='btn' onClick={() => setPage((prev) => prev < maxPage ? prev + 1 : maxPage)}>Next</button>
-        <button className='btn' onClick={() => setPage((prev) => prev > 0 ? prev - 1 : 1)}>Prev</button>
-      </div>
+     
 
     </div>
+     <div className='btns'>
+     <button className='btn' onClick={() => setPage((prev) => prev < maxPage ? prev + 1 : maxPage)}>Next</button>
+     <button className='btn' onClick={() => setPage((prev) => prev > 0 ? prev - 1 : 1)}>Prev</button>
+   </div>
+   </>
   );
 }
