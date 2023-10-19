@@ -28,4 +28,32 @@
     left: 15px;
   }
 
-  
+  @media (max-width: 700px) {
+    .sidebar {    
+      
+      height: auto; 
+    }
+    .sidebar-icons{
+      padding: 0 2rem;
+      position: relative;
+      top: 30%;
+      display: flex;
+      justify-content: space-between;
+  }
+  .active{
+    background-color: white;
+    border-left: 5px solid white;
+    border-top: 5px solid white;
+    border-right: 5px solid white;
+    border-bottom: 5px solid blue;
+    border-radius: 5px;
+  } 
+  .exit-icon{
+    position: fixed;
+    
+    right: 20px;
+    left: auto;
+  }
+   
+    
+    }

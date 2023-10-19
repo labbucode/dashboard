@@ -27,6 +27,10 @@
     border-radius: 5px;
   }
 
+  .para-text{
+    margin: 10px;
+    font-size: xx-large;
+  }
   .para{
     margin: 17px;
     font-size: unset;

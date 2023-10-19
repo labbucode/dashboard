@@ -23,7 +23,9 @@ export default function GraphImage() {
     chart: {
       type: 'column',
     },
-    
+    title: {
+      text: '',
+    },
     xAxis: {
       categories: [''],
     },
@@ -59,23 +61,23 @@ export default function GraphImage() {
     <div className='Graph-Page'>
         <div className="box">
           <h4>Total Projects</h4>
-          <p className='p'>{stats.total}</p>
+          <p className='para-text'>{stats.total}</p>
         </div>
         <div className="box">
           <h4>Closed</h4>
-          <p className='p'>{stats.Closed}</p>
+          <p className='para-text'>{stats.Closed}</p>
         </div>
         <div className="box">
           <h4>Running</h4>
-          <p className='p'>{stats.Running}</p>
+          <p className='para-text'>{stats.Running}</p>
         </div>
         <div className="box">
           <h4>Closed Delay</h4>
-          <p className='p'>{stats.Closed}</p>
+          <p className='para-text'>{stats.Closed}</p>
         </div>
         <div className="box">
           <h4>Cancelled</h4>
-          <p className='p'>{stats.Cancelled}</p>
+          <p className='para-text'>{stats.Cancelled}</p>
         </div>      
     </div>
     <div className="chart-container" >

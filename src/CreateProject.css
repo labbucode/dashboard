@@ -9,3 +9,26 @@
 .right-column{
   width: 95%;
 }
+
+@media (max-width: 700px) {
+  body{
+    color: grey;
+  }
+  .project-page{
+    flex-direction: column;
+  }
+  
+  .left-column{
+    
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+   border-radius: 30px;
+  }
+  .right-column{
+    height: 100vh;
+    background: #c9cfd1;
+    width: 100%;
+  }
+    
+}

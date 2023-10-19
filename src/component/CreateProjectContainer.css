@@ -61,4 +61,35 @@
     left: 57%;
     bottom: 3%;
 }
-
+@media (max-width: 700px) {
+.Project-Container{
+   
+    width: 95%;
+    margin: 9px;
+    height: 79vh;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+}
+.Project-Main {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin-top: 0px;
+}
+.Project-Head {
+    overflow: scroll;
+    display: block;
+    margin: 5px;
+    height: 10%;
+}
+.Project-Main-input{
+   
+    padding: 1rem;
+}
+.label {
+    
+    font-size: 17px;
+}
+}
