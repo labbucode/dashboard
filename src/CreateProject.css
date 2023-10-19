@@ -26,7 +26,8 @@
    border-radius: 30px;
   }
   .right-column{
-    height: 100vh;
+    height: auto;
+    margin-bottom: 4rem;
     background: #f3f4f5;
     width: 100%;
   }

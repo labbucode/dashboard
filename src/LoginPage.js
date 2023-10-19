@@ -66,7 +66,7 @@ function LoginPage() {
   };
 
   return (
-    <>
+    <div className='main'>
       <div className="blue-box">
         <img className="OvalIcon" src={Oval} alt="Oval" />
         <div className="logo">
@@ -133,7 +133,7 @@ function LoginPage() {
           <p className="inv-cred">Invalid credentials</p>
         )}
       </div>
-    </>
+    </div>
   );
 }
 

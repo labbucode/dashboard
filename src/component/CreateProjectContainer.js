@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import '../component/CreateProjectContainer.css';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 export default function CreateProjectContainer() {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     theme: '',
     reason: '',
@@ -66,7 +68,7 @@ export default function CreateProjectContainer() {
     axios.post("https://backend-bbi9.onrender.com/listings", content, { headers: headerValue })
     .then(data => {
       console.log(data);
-      // Clear the form after a successful submission
+      
       setFormData({
         theme: '',
         reason: '',
@@ -80,6 +82,7 @@ export default function CreateProjectContainer() {
         location: '',
         status: 'Registered',
       });
+      navigate('/dashboard/list');
     })
     .finally(() => setIsLoading(false));
   };
@@ -249,14 +252,20 @@ export default function CreateProjectContainer() {
                 <option>Mumbai</option>
               </select>
             </div>
-          </div>
-
-          <div className='Project-status'>
+            <div className='Project-status'>
             <p>Status:<span style={{fontWeight: 500}}> Registered</span> </p>
           </div>
+          </div>
+
+         
+
+          <button className="Project-Head-btn1" type="submit" disabled={isLoading} >
+              {isLoading ? loadingText : 'Start Project'}
+            </button>
 
           
         </form>
+        
       </div>
     </div>
   );

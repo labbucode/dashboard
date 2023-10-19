@@ -34,9 +34,7 @@
 
 
 @media (max-width: 700px) {
-  *{
-    overflow: hidden;
-  }
+  
 .header{ height: 4rem;
     background-color: blue;
     border-bottom-left-radius: 43px;

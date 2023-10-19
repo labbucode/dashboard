@@ -49,11 +49,6 @@
     border-radius: 5px;
   } 
   .exit-icon{
-    position: fixed;
-    
-    right: 20px;
-    left: auto;
-  }
-   
-    
-    }
+      display: none;
+  } 
+}
