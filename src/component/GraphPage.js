@@ -67,6 +67,10 @@ export default function GraphImage() {
           <p className='p'>{stats.Running}</p>
         </div>
         <div className="box">
+          <h4>Closed Delay</h4>
+          <p className='p'>{stats.Closed}</p>
+        </div>
+        <div className="box">
           <h4>Cancelled</h4>
           <p className='p'>{stats.Cancelled}</p>
         </div>      

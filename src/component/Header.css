@@ -1,6 +1,5 @@
 .header{
-  position: relative;
-  z-index: -1;
+ 
  height: 6rem; 
  background-color: blue;
  border-bottom-left-radius: 50px;
@@ -10,7 +9,6 @@
       position: absolute;
       top: -13px;
       right: 35%;
-      z-index: -1;
 }
 .Logo-img{
   width: 70px;

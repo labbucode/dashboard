@@ -15,7 +15,7 @@ function Header() {
         <p className="text-para">{title}</p>
       </div>
 
-      <img className="Logo-oval" src={Oval} />
+      {/* <img className="Logo-oval" src={Oval} /> */}
       <img className="Logo-img" src={Logo} />
     </header>
   );
