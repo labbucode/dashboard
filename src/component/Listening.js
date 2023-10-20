@@ -3,6 +3,7 @@ import '../component/Listening.css';
 import axios from 'axios';
 import { IoIosSearch } from 'react-icons/io';
 import { FcGenericSortingDesc } from 'react-icons/fc';
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -16,12 +17,12 @@ export default function Listening() {
   const [filteredLists, setFilteredLists] = useState([]);
   const [sortKey, setSortKey] = useState(null);
   const [sortOrder, setSortOrder] = useState('asc');
-
+  const [showSort, setShowSort] = useState(false);
+  const navigate = useNavigate();
 
 
  
   useEffect(() => {
-
     const token =  localStorage.getItem('token');
     const headerValue = {
         'Content-Type': 'application/json',
@@ -101,9 +102,27 @@ export default function Listening() {
 
   return (
     <>
-    <div className='Listening-container'>
+{showSort && <div className='sortPage'>
+  <div className='sortPage-header'>
+  <h3>Sort Projects By</h3>
+  <p onClick={() => setShowSort(false)}>X</p>
+  </div>
+
+  <div className='sortPage-main'>
+    <ul>
+    <li onClick={() => setSortKey('priority')}>Priority</li>
+    <li onClick={() => setSortKey('project_name')}>Project</li>
+    <li onClick={() => setSortKey('status')}>Status</li>
+    <li onClick={() => setSortKey('location')}>Location</li>
+    <li onClick={() => setSortKey('priority')}>End Date</li>
+    </ul>
+    </div>
+  </div>
+}  
 
 
+<div className='Listening-container'>
+  
 <div className='sort-search'>
 <div >
 <IoIosSearch style={{
@@ -120,15 +139,7 @@ export default function Listening() {
         onChange={(e) => setSearchText(e.target.value)}
       />
       </div>
-      <div className='sort-icons' onChange={handleSortChange}><FcGenericSortingDesc size={24} color="grey" />
-      <select onChange={handleSortChange} style={{border: 'none' , width: '55%'}}>
-          <option value="">None</option>
-          <option value="priority">Priority</option>
-          <option value="project_name">Project</option>
-          <option value="status">Status</option>
-          <option value="location">Location</option>
-        </select>
-      </div>
+      <FcGenericSortingDesc size={24} color="grey" onClick={() => setShowSort(true)}/>
       
 
 <div className="sort-controls">

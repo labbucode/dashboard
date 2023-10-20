@@ -173,4 +173,30 @@ tr{
 .td{
   padding: 3px;
 }
+.sortPage{
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+}
+.sortPage-header{
+  padding: 1rem;
+  color: #312b2b;
+  font-size: larger;
+  display: flex;
+  justify-content: space-between;
+}
+.sortPage-main li{
+  list-style-type: none;
+  margin: 0 0 40px 0;
+}
+.sortPage-main{
+  
+  padding: 1rem;
+  border-bottom: 1px solid grey;
+  color: #312b2b;
+}
+
 }
