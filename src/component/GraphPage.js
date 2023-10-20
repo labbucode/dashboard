@@ -72,14 +72,13 @@ export default function GraphImage() {
           <p className='para-text'>{stats.Running}</p>
         </div>
         <div className="box">
-          <h4>Cancelled</h4>
-          <p className='para-text'>{stats.Cancelled}</p>
-        </div> 
-        <div className="box">
           <h4>Closed Delay</h4>
           <p className='para-text'>{stats.Closed}</p>
         </div>
-             
+        <div className="box">
+          <h4>Cancelled</h4>
+          <p className='para-text'>{stats.Cancelled}</p>
+        </div>      
     </div>
     <div className="chart-container" >
     <p className='para'>Department-Wise Success - Total Vs Closed</p>

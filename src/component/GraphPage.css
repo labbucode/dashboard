@@ -46,6 +46,9 @@
     .chart{
       width: 92%;
     }
+    .box{
+      font-size: xx-small;
+    }
     .Graph-Page {
       margin: 10px;
   }
