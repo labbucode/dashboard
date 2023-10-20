@@ -139,7 +139,7 @@ export default function Listening() {
         onChange={(e) => setSearchText(e.target.value)}
       />
       </div>
-      <FcGenericSortingDesc size={24} color="grey" onClick={() => setShowSort(true)}/>
+      <FcGenericSortingDesc size={24} color="grey" className='sort-icon' onClick={() => setShowSort(true)}/>
       
 
 <div className="sort-controls">

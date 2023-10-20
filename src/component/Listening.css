@@ -9,9 +9,10 @@
 .table-for-mobile{
   display: none;
 }
-.sort-icons{
+.sort-icon{
   display: none;
 }
+
 
 .dot-icon {
   width: 8px;
@@ -197,6 +198,9 @@ tr{
   padding: 1rem;
   border-bottom: 1px solid grey;
   color: #312b2b;
+}
+.sort-icon{
+  display: block;
 }
 
 }
