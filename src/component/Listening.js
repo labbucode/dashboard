@@ -120,7 +120,15 @@ export default function Listening() {
         onChange={(e) => setSearchText(e.target.value)}
       />
       </div>
-      <div className='sort-icons' onChange={handleSortChange}><FcGenericSortingDesc size={24} color="grey" /></div>
+      <div className='sort-icons' onChange={handleSortChange}><FcGenericSortingDesc size={24} color="grey" />
+      <select onChange={handleSortChange} style={{border: 'none' , width: '55%'}}>
+          <option value="">None</option>
+          <option value="priority">Priority</option>
+          <option value="project_name">Project</option>
+          <option value="status">Status</option>
+          <option value="location">Location</option>
+        </select>
+      </div>
       
 
 <div className="sort-controls">
