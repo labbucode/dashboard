@@ -94,7 +94,7 @@ export default function CreateProjectContainer() {
       <div className='Project-Container'>
         <form onSubmit={handleSubmit}>
         <div className='Project-Head'>
-          <div>
+          <div style={{marginLeft: '18px'}}>
             <textarea
             rows="2"
               className='Project-Head-input'
