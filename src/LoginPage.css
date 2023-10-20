@@ -78,6 +78,7 @@
   }
   
   .login-form h3 {
+    font-weight: 500;
     color: #7b7474;
     margin: 20px 0;
   }
@@ -100,7 +101,7 @@
   input[type="text"],
   input[type="password"] {
     width: 100%;
-    padding: 10px;
+    padding: 17px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
@@ -131,6 +132,7 @@
     margin-bottom: 5px;
     font-size: 16px;
     color: #333;
+    font-weight: 400;
   }
   
   input[type="text"] + label,
@@ -165,12 +167,12 @@
 
 .form-group-email label {
   display: block;
-  font-weight: bold;
+  font-weight: 400;
 }
 
 .form-group-email input {
   width: 100%;
-  padding: 10px;
+  padding: 17px;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
