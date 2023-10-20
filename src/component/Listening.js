@@ -185,6 +185,10 @@ export default function Listening() {
               <th>Dept.</th>
               <th>Location</th>
               <th>Status</th>
+              <th style={{color: 'transparent'}}>Status</th>
+              <th style={{color: 'transparent'}}>Status</th>
+              <th style={{color: 'transparent'}}>Status</th>
+             
             </tr>
           </thead>
 
@@ -208,11 +212,11 @@ export default function Listening() {
                   <td>{item.location}</td>
                   <td className="status" >{item.status}</td>
                   <td>
-                    <button className='td-btn1' onClick={() => handleStatus("Running", item._id)}>Start</button>
+                    <button className='td-btn1' onClick={() => handleStatus("Running", item._id)}>Start</button> </td>
                
-                    <button className='td-btn' onClick={() => handleStatus("Closed", item._id)}>Close</button>
+                    <td>  <button className='td-btn' onClick={() => handleStatus("Closed", item._id)}>Close</button> </td>
                   
-                    <button className='td-btn' onClick={() => handleStatus("Cancelled", item._id)}>Cancel</button>
+                  <td> <button className='td-btn' onClick={() => handleStatus("Cancelled", item._id)}>Cancel</button>
                   </td>
                 </tr>
               ))

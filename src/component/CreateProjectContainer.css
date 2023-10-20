@@ -33,7 +33,7 @@
 .Project-Head-btn{
     
     cursor: pointer;
-    background-color: blue;
+    background-color: #04539c;
     width: 150px;
     height: 37px;
     color: white;
@@ -88,7 +88,7 @@
     position: relative;
     display: block;
     cursor: pointer;
-    background-color: blue;
+    background-color: #04539c;
     width: 90%;
     height: 37px;
     color: white;
