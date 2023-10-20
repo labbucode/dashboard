@@ -22,7 +22,8 @@ export default function CreateProjectContainer() {
   const [isLoading, setIsLoading] = useState(false);
   const [loadingText, setLoadingText] = useState('');
   const [dateError, setDateError] = useState('');
-   const [emptyFields, setEmptyFields] = useState([]);
+  const [emptyError, setEmptyError] = useState('');
+
 
   const handleInputChange = (e) => {
     const { id, value } = e.target;
@@ -32,18 +33,11 @@ export default function CreateProjectContainer() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-     const emptyFieldsList = [];
     for (const key in formData) {
-      if (formData[key] === '') {
-        emptyFieldsList.push(key);
+      if (formData[key] === '' ) {
+       setEmptyError(true);
+        return; 
       }
-    }
-
-    if (emptyFieldsList.length > 0) {
-      setEmptyFields(emptyFieldsList);
-      return;
-    } else {
-      setEmptyFields([]);
     }
 
     if (new Date(formData.startDate) > new Date(formData.endDate)) {
@@ -100,7 +94,6 @@ export default function CreateProjectContainer() {
       <div className='Project-Container'>
         <form onSubmit={handleSubmit}>
         <div className='Project-Head'>
-            
             <textarea
             rows="2"
               className='Project-Head-input'
@@ -109,6 +102,7 @@ export default function CreateProjectContainer() {
               value={formData.theme}
               onChange={handleInputChange}
             />
+            <div className='empty-error-msg'>{emptyError && formData.theme.length <= 0 &&  "Project Theme Required"}</div>
             <button className="Project-Head-btn" type="submit" disabled={isLoading} >
               {isLoading ? loadingText : 'Start Project'}
             </button>
@@ -122,16 +116,16 @@ export default function CreateProjectContainer() {
                 className='Project-Main-input'
                 id='reason'
                 value={formData.reason}
-                onChange={handleInputChange}
-                
+                onChange={handleInputChange}  
               >
                 <option disabled value="">Select reason</option>
                 <option>Business</option>
                 <option>Dealership</option>
                 <option>Transport</option>
               </select>
-              
+                 <div className='empty-error-msg'>{emptyError && formData.type.length <= 0 &&  "Project Reason Required"}</div>
             </div>
+           
             <div>
               <label htmlFor='type' className='label'>
                 Type
@@ -148,6 +142,7 @@ export default function CreateProjectContainer() {
                 <option>Vendor</option>
               </select>
             </div>
+            <div className='empty-error-msg'>{emptyError && formData.type.length <= 0 &&  "Project Type Required"}</div>
             <div>
               <label htmlFor='division' className='label'>
                 Division
@@ -165,6 +160,7 @@ export default function CreateProjectContainer() {
                 <option>Glass</option>
                 <option>Water Heater</option>
               </select>
+              <div className='empty-error-msg'>{emptyError && formData.division.length <= 0 &&  "Project Division Required"}</div>
             </div>
             <div>
               <label htmlFor='category' className='label'>
@@ -182,6 +178,7 @@ export default function CreateProjectContainer() {
                 <option>Quality C</option>
                 <option>Quality D</option>
               </select>
+              <div className='empty-error-msg'>{emptyError && formData.category.length <= 0 &&  "Project Category Required"}</div>
             </div>
             <div>
               <label htmlFor='priority' className='label'>
@@ -198,6 +195,7 @@ export default function CreateProjectContainer() {
                 <option>Medium</option>
                 <option>Low</option>
               </select>
+              <div className='empty-error-msg'>{emptyError && formData.priority.length <= 0 &&  "Project Priority Required"}</div>
             </div>
             <div>
               <label htmlFor='department' className='label'>
@@ -216,6 +214,7 @@ export default function CreateProjectContainer() {
                 <option>Maintenance</option>
                 <option>Stores</option>
               </select>
+              <div className='empty-error-msg'>{emptyError && formData.department.length <= 0 &&  "Project Department Required"}</div>
             </div>
 
           <div>
@@ -229,6 +228,7 @@ export default function CreateProjectContainer() {
               value={formData.startDate}
               onChange={handleInputChange}
             />
+            <div className='empty-error-msg'>{emptyError && formData.startDate.length <= 0 &&  "Project Start Date Required"}</div>
           </div>
           <div>
             <label htmlFor='end' className='label'>
@@ -241,7 +241,8 @@ export default function CreateProjectContainer() {
               value={formData.endDate}
               onChange={handleInputChange}
             />
-            {dateError && <p className="error-text">{dateError}</p>}
+            <div className='empty-error-msg'>{emptyError && formData.endDate.length <= 0 &&  "Project Last Date Required"}</div>
+            {dateError && <p className="empty-error-msg">{dateError}</p>}
           </div>
           
           <div>
@@ -259,18 +260,15 @@ export default function CreateProjectContainer() {
                 <option>Delhi</option>
                 <option>Mumbai</option>
               </select>
+              
+            <div className='empty-error-msg'>{emptyError && formData.location.length <= 0 &&  "Project Location Required"}</div>
             </div>
             <div className='Project-status'>
             <p>Status:<span style={{fontWeight: 500}}> Registered</span> </p>
           </div>
           </div>
 
-          {emptyFields.length > 0 && (
-            <p className="error-text">
-              The following fields are empty: {emptyFields.join(', ')}
-            </p>
-          )}
-          {dateError && <p className="error-text">{dateError}</p>}         
+         
 
           <button className="Project-Head-btn1" type="submit" disabled={isLoading} >
               {isLoading ? loadingText : 'Start Project'}
