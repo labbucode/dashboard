@@ -10,7 +10,7 @@ export default function Listening() {
   const [lists, setLists] = useState([]);
   const [loading, setLoading] = useState(true);
   const [page, setPage] = useState(1);
-  const [limit, setLimit] = useState(5);
+  const [limit, setLimit] = useState(7);
   const [maxPage, setMaxPage] = useState(1);
   const [searchText, setSearchText] = useState('');
   const [filteredLists, setFilteredLists] = useState([]);

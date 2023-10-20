@@ -5,7 +5,7 @@ import LogoutIcon from '../assists/Logout.svg';
 import Oval from '../assists/Oval.svg';
 import { FaArrowLeft } from 'react-icons/fa';
 import CreateProject from '../CreateProject';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate} from 'react-router-dom';
 import { MdOutlineLogout, MdKeyboardArrowLeft } from 'react-icons/md';
 
 function Header() {
@@ -17,11 +17,14 @@ function Header() {
 
  const title = lastPart === "list" ? "Project List": lastPart === "graph" ? "Dashboard" : "Create Project";
 
+ const handleGoBack = () => {
+  navigate(-1);
+};
 
   return (
     <header className="header">
       <div className="text">
-      <MdKeyboardArrowLeft size={26} color="white" className="arrow-icon" />
+      <MdKeyboardArrowLeft size={26} color="white" className="arrow-icon" onClick={handleGoBack} />
         <p className="text-para">{title}</p>
       </div>
 
