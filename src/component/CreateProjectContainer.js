@@ -22,6 +22,7 @@ export default function CreateProjectContainer() {
   const [isLoading, setIsLoading] = useState(false);
   const [loadingText, setLoadingText] = useState('');
   const [dateError, setDateError] = useState('');
+   const [emptyFields, setEmptyFields] = useState([]);
 
   const handleInputChange = (e) => {
     const { id, value } = e.target;
@@ -31,11 +32,18 @@ export default function CreateProjectContainer() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+     const emptyFieldsList = [];
     for (const key in formData) {
-      if (formData[key] === '' ) {
-        alert(`Please fill in the ${key} field.`);
-        return; 
+      if (formData[key] === '') {
+        emptyFieldsList.push(key);
       }
+    }
+
+    if (emptyFieldsList.length > 0) {
+      setEmptyFields(emptyFieldsList);
+      return;
+    } else {
+      setEmptyFields([]);
     }
 
     if (new Date(formData.startDate) > new Date(formData.endDate)) {
@@ -257,7 +265,12 @@ export default function CreateProjectContainer() {
           </div>
           </div>
 
-         
+          {emptyFields.length > 0 && (
+            <p className="error-text">
+              The following fields are empty: {emptyFields.join(', ')}
+            </p>
+          )}
+          {dateError && <p className="error-text">{dateError}</p>}         
 
           <button className="Project-Head-btn1" type="submit" disabled={isLoading} >
               {isLoading ? loadingText : 'Start Project'}
