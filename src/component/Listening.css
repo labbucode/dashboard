@@ -114,10 +114,11 @@ table {
 }
 
 th {
-  background-color: #c2edf9;
+  background-color: #eaf8fd;;
   color: #312b2b;
   padding: 10px;
   font-weight: 500;
+  border: none;
 }
 
 td {
