@@ -94,6 +94,7 @@ export default function CreateProjectContainer() {
       <div className='Project-Container'>
         <form onSubmit={handleSubmit}>
         <div className='Project-Head'>
+          <div>
             <textarea
             rows="2"
               className='Project-Head-input'
@@ -103,6 +104,7 @@ export default function CreateProjectContainer() {
               onChange={handleInputChange}
             />
             <div className='empty-error-msg'>{emptyError && formData.theme.length <= 0 &&  "Project Theme Required"}</div>
+           </div>
             <button className="Project-Head-btn" type="submit" disabled={isLoading} >
               {isLoading ? loadingText : 'Start Project'}
             </button>
@@ -141,8 +143,8 @@ export default function CreateProjectContainer() {
                 <option>External</option>
                 <option>Vendor</option>
               </select>
-            </div>
             <div className='empty-error-msg'>{emptyError && formData.type.length <= 0 &&  "Project Type Required"}</div>
+            </div>
             <div>
               <label htmlFor='division' className='label'>
                 Division

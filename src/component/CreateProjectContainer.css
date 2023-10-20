@@ -23,7 +23,7 @@
     font-size: 12px;
 }
 .Project-Head-input{
-    width: 55%;
+    width: 50vw;
     border-radius: 5px;
     border: 1px solid gray;
     padding: 10px;
@@ -68,6 +68,7 @@
 
 .empty-error-msg{
     color: red;
+    font-size: 12px;
 }
 
 @media (max-width: 700px) {
