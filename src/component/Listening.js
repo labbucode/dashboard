@@ -187,7 +187,7 @@ export default function Listening() {
         <table className='table-for-desktop'>
           <thead>
             <tr>
-              <th>Project Name</th>
+              <th style={{whiteSpace: 'nowrap'}}>Project Name</th>
               <th>Reason</th>
               <th>Type</th>
               <th>Division</th>
@@ -212,7 +212,7 @@ export default function Listening() {
               filteredLists.map((item, index) => (
                 <tr key={index}>
                   <td> <div style={{fontWeight: 700, color: '#312b2b'}}> {item.project_name}</div>
-                  <div style={{color: 'grey'}}>{item.startDate} to {item.lastDate}</div>
+                  <div style={{color: 'grey', whiteSpace: 'nowrap',marginTop: '3px'}}>{item.startDate} to {item.lastDate}</div>
                   </td>
                   <td>{item.reason}</td>
                   <td>{item.type}</td>

@@ -60,6 +60,7 @@ tbody{
 }
 
 .sort-search{
+  height: 10vh;
   display: flex;
   justify-content: space-between;
   padding-right: 20px;
@@ -69,7 +70,6 @@ tbody{
   align-items: center;
 }
 .td-btn1{
-  margin: 0 18px;
   background-color: blue;
     width: 75px;
     height: 28px;
@@ -78,7 +78,6 @@ tbody{
     color: white;
 }
 .td-btn{
-  margin: 0 18px;
   color: #04539c;
     width: 75px;
     height: 28px;
@@ -104,6 +103,9 @@ tbody{
   border-bottom: 1px solid #ccc;
   padding: 7px 20px;
   transition: border-color 0.3s;
+  height: 2.5rem;
+  font-size: 17px;
+  color: grey;
 }
 
 table {
@@ -122,7 +124,7 @@ td {
   background-color: white;
   padding: 10px;
   border: none;
-  font-size: small;
+  font-size: 15px;
 }
 tr{
   border: 1px solid #ebdfdf;
