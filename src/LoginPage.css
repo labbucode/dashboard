@@ -180,12 +180,12 @@
 
 
   .login-button{
-    width: 60%;
-    height: 30px;
+    height: 35px;
+    width: 45%;
     border-radius: 25px;
     background-color: #007bff;
     color: #fff;
-    border: 1px solid black;
+    border: none;
     cursor: pointer;
   }
   .inv-cred{
@@ -232,7 +232,7 @@
     background-color: #fff
   }
   .login-form {
-    width: 355px;
+    width: 332px;
     margin: 0;
     padding: 13px;
     background-color: transparent;
@@ -266,11 +266,12 @@
 .login-container {
   position: absolute;
   height: 350px;
-  top: 43%;
+  top: 42%;
   left: 8px;
 }
 .login-button{
   width:100%;
+  font-size: 17px;
 }
 
 .form-group-forget-password {
