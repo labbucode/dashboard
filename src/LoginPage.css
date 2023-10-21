@@ -218,12 +218,14 @@ input[type="password"] + label {
         position: absolute;
         left: 19%;
     }
-    
-    .login-container {
-    position: absolute;
-    height: 350px;
-    top: 43%;
-    left: 5%;
+
+
+.login-container {
+  position: relative;
+  height: 350px;
+  top: 58;
+  left: 5%;
+  top: 18rem;
 }
 
     .login-button {
