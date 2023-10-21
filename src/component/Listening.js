@@ -110,11 +110,20 @@ export default function Listening() {
 
   <div className='sortPage-main'>
     <ul>
-    <li onClick={() => setSortKey('priority')}>Priority</li>
-    <li onClick={() => setSortKey('project_name')}>Project</li>
-    <li onClick={() => setSortKey('status')}>Status</li>
-    <li onClick={() => setSortKey('location')}>Location</li>
-    <li onClick={() => setSortKey('priority')}>End Date</li>
+    <li onClick={() => {setSortKey('priority') 
+      setShowSort(false)}}>Priority</li>
+    <li onClick={() => {setSortKey('project_name')
+     setShowSort(false)}
+  }>Project</li>
+    <li onClick={() => {setSortKey('status')
+   setShowSort(false)}  
+  }>Status</li>
+    <li onClick={() => {setSortKey('location')
+   setShowSort(false)}  
+  }>Location</li>
+    <li onClick={() => {setSortKey('priority')
+   setShowSort(false)}  
+  }>End Date</li>
     </ul>
     </div>
   </div>
