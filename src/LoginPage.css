@@ -1,67 +1,49 @@
-
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-
-  
-  
-  
-  .blue-box {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    background-color: #0357a5;
-    min-height: 72vh;
-    z-index: -1;
-    border-bottom-left-radius: 110px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-  /* logo start */
+.blue-box {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  background-color: #0357a5;
+  min-height: 72vh;
+  z-index: -1;
+  border-bottom-left-radius: 110px;
+}
 
-  .oval-img{
-    position: absolute;
-    left: 40%;
-    bottom: 10%;
-  }
-  .logo-container{
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 2rem;
-    left: 50%;
-    transform: translateX(-50%);
-  }
+.oval-img {
+  position: absolute;
+  left: 40%;
+  bottom: 10%;
+}
 
-  .logo-img{
-     position: relative;
-     right: -26%;
-     top: -7px;
-  }
-  /* .OvalIcon{
-    position: absolute;
-    top: -20%;
-    left: 33%;
-  } */
+.logo-container {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
 
-  .OvalIcon {
-    position: absolute;
-    left: 34rem;
+.logo-img {
+  position: relative;
+  right: -26%;
+  top: -7px;
 }
 
 
-  /* .logo{
-    position: relative;
-    color: white;
-    top: 31px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-} */
+.OvalIcon {
+  position: absolute;
+  left: 34rem;
+}
+
+
+
 .logo {
   position: relative;
   color: white;
@@ -73,128 +55,112 @@
   flex-direction: column;
 }
 
-.logo-text{
+.logo-text {
   margin: 15px 0;
 }
-/* .logo-text{
 
-} */
-  /* logo end */
 
-  /* .login-container {
-    display: flex;  
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  } */
-  .login-container {
-    position: absolute;
-    top: 14.6rem;
-    left: 31rem;
+.login-container {
+  position: absolute;
+  top: 14.6rem;
+  left: 31rem;
 }
-  
-  .login-form {
-    height: 400px;
-    width: 420px;
-    margin: auto;
-    padding: 20px;
-    background-color: white;
-    border-radius: 12px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-    text-align: center;
-  }
-  
-  .login-form h3 {
-    font-weight: 500;
-    color: #7b7474;
-    margin: 20px 0;
-  }
-  
-  .form-group {
-    margin-bottom: 15px;
-  }
-  
-  .form-group-forget-password {
-    display: flex;
-    flex-direction: row-reverse;
-    margin-bottom: 15px;
-  }
 
-  .form-group-password-input{
-      position: relative;
-  }
-  
-  
-  input[type="text"],
-  input[type="password"] {
-    width: 100%;
-    padding: 17px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-    outline: none;
-  }
-  
-  /* .show-password-button {
-    position: absolute;
-    top: 15px;
-    right: 10px;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    font-size: 14px; 
-  } */
-  .show-password-button {
-    position: absolute;
-    top: 20px;
-    right: 10px;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    font-size: 14px; 
-  }
-  
-  .forgot-password {
-    color: #0525cb;
-    cursor: pointer;
-    font-size: 14px;
-  }
-  
-  label {
-    display: block;
-    text-align: left;
-    margin-bottom: 5px;
-    font-size: 16px;
-    color: #333;
-    font-weight: 400;
-  }
-  
-  input[type="text"] + label,
-  input[type="password"] + label {
-    display: inline-block;
-    margin-bottom: 0;
-    color: #777; 
-  }
-  
+.login-form {
+  height: 400px;
+  width: 420px;
+  margin: auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.login-form h3 {
+  font-weight: 500;
+  color: #7b7474;
+  margin: 20px 0;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group-forget-password {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-bottom: 15px;
+}
+
+.form-group-password-input {
+  position: relative;
+}
 
 
-  .login-button{
-    height: 35px;
-    width: 45%;
-    border-radius: 25px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-  }
-  .inv-cred{
-    position: absolute;
-    bottom: 100px;
-    color: red;
-  }
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 17px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+}
 
-  
+
+.show-password-button {
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.forgot-password {
+  color: #0525cb;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+label {
+  display: block;
+  text-align: left;
+  margin-bottom: 5px;
+  font-size: 16px;
+  color: #333;
+  font-weight: 400;
+}
+
+input[type="text"]+label,
+input[type="password"]+label {
+  display: inline-block;
+  margin-bottom: 0;
+  color: #777;
+}
+
+
+
+.login-button {
+  height: 35px;
+  width: 45%;
+  border-radius: 25px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.inv-cred {
+  position: absolute;
+  bottom: 24px;
+  left: 35%;
+  color: red;
+}
+
+
 
 .form-group-email {
   margin-bottom: 20px;
@@ -215,78 +181,78 @@
 .error-text {
   color: red;
   display: flex;
-  justify-content: flex-start; 
+  justify-content: flex-start;
 }
 
 
 .form-group input:invalid {
   border: 1px solid red;
-  
+
 }
 
 @media (max-width: 700px) {
 
-  body{
-    
+  body {
+
     background-color: #fff
   }
+
   .login-form {
     width: 332px;
     margin: 1rem;
     padding: 13px;
     background-color: transparent;
     box-shadow: 0px 0px 0px;
-    text-align: left;   
-}
+    text-align: left;
+  }
 
   .blue-box {
     width: 100vw;
     min-height: 42vh;
     overflow: hidden;
-}
+  }
 
 
 
-.logo p{
-  font-size: 19px;
-  margin: 20px;
-}
-.OvalIcon {
-  width: 100%;
-  position: absolute;
-  left: 19%;
-}
+  .logo p {
+    font-size: 19px;
+    margin: 20px;
+  }
 
-.login-container {
-  position: absolute;
-  height: 350px;
-  top: 42%;
-  left: 8px;
-}
-.login-button{
-  width:100%;
-  font-size: 17px;
-}
+  .OvalIcon {
+    width: 100%;
+    position: absolute;
+    left: 19%;
+  }
 
-.form-group-forget-password {
-  display: flex;
-  flex-direction: row-reverse;
-  margin: 4px 0 50px 0;
-}
-.login-form h3 {
-  font-weight: 600;
-  color: #4e4b4b;
-  margin: 20px 0;
-}
-.inv-cred {
-  left: 32px;
-  bottom: 25px;
-  color: red;
-  position: absolute;
-}
-  
-}
+  .login-container {
+    position: absolute;
+    height: 350px;
+    top: 42%;
+    left: 8px;
+  }
 
+  .login-button {
+    width: 100%;
+    font-size: 17px;
+  }
 
+  .form-group-forget-password {
+    display: flex;
+    flex-direction: row-reverse;
+    margin: 4px 0 50px 0;
+  }
 
+  .login-form h3 {
+    font-weight: 600;
+    color: #4e4b4b;
+    margin: 20px 0;
+  }
 
+  .inv-cred {
+    left: 32px;
+    bottom: 25px;
+    color: red;
+    position: absolute;
+  }
+}

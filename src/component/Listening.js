@@ -236,13 +236,20 @@ export default function Listening() {
         </table>
       </div>
     </div>
-    <div className='btns'>
-     <button className='btn' onClick={() => setPage((prev) => prev < maxPage ? prev + 1 : maxPage)}>Next</button>
-     <button className='btn' onClick={() => setPage((prev) => prev > 0 ? prev - 1 : 1)}>Prev</button>
-   </div>
 
- 
-
+    <div className="pagination">
+        <button className="arrow pagi-button" id="prevPage">← <span className="nav-text"
+       onClick={() => setPage((prev) => prev > 0 ? prev - 1 : 1)}
+        >PREV</span></button>
+        <div className="pages">
+            <div onClick={() => setPage(1)}className="page-number pagi-active">1</div>
+            <div onClick={() => setPage(2)} className="page-number">2</div>
+            
+        </div>
+        <button className="arrow pagi-button" id="nextPage"><span className="nav-text"
+         onClick={() => setPage((prev) => prev < maxPage ? prev + 1 : maxPage)}
+        >NEXT</span> →</button>
+    </div>
    </>
   );
 }
