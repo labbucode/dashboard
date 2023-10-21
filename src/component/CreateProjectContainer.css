@@ -83,7 +83,7 @@
    
     width: 95%;
     margin: 9px;
-    height: 1200px;
+    height: auto;
     background-color: #fff;
     display: flex;
     flex-direction: column;
@@ -92,7 +92,6 @@
 }
 
 .Project-Head-btn1 {
-    position: relative;
     display: block;
     cursor: pointer;
     background-color: #04539c;
@@ -101,9 +100,7 @@
     color: white;
     border-radius: 40px;
     border: 1px solid black;
-    top: 88px;
-    left: 18px;
-    margin-top: 10px;
+    margin: 15px;
 }
 .Project-Head-btn{
     display: none;
