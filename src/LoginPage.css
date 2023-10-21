@@ -184,6 +184,10 @@ input[type="password"] + label {
     body {
         background-color: #fff;
     }
+    .main{
+      display: flex;
+      flex-direction: column;
+    }
 
     .login-form {
         width: 332px;
