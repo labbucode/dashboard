@@ -232,7 +232,7 @@
   }
   .login-form {
     width: 332px;
-    margin: 0;
+    margin: 1rem;
     padding: 13px;
     background-color: transparent;
     box-shadow: 0px 0px 0px;
@@ -240,18 +240,12 @@
 }
 
   .blue-box {
-  width: 100vw;
-    background-color: #04539c;
-    border-bottom-left-radius: 100px;
+    width: 100vw;
     min-height: 42vh;
     overflow: hidden;
 }
 
 
-.logo {
-  left: -3px;
-  top: 110px;
-}
 
 .logo p{
   font-size: 19px;
