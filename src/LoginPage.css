@@ -225,7 +225,6 @@
 }
 
 @media (max-width: 700px) {
- 
 
   body{
     
@@ -248,9 +247,10 @@
     overflow: hidden;
 }
 
+
 .logo {
-  left: -15px;
-  top: 133px;
+  left: -3px;
+  top: 110px;
 }
 
 .logo p{
