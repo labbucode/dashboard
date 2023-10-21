@@ -278,6 +278,12 @@
   color: #4e4b4b;
   margin: 20px 0;
 }
+.inv-cred {
+  left: 32px;
+  bottom: 25px;
+  color: red;
+  position: absolute;
+}
   
 }
 

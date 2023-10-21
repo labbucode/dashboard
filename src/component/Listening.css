@@ -138,6 +138,12 @@ tr{
   .table-for-desktop{
   display: none;
  }
+ .inv-cred {
+  left: 32px;
+  bottom: 25px;
+  color: red;
+  position: absolute;
+}
  .table-for-mobile{
   display: block;
 }
