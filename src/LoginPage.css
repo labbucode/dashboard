@@ -8,15 +8,16 @@
 
   
   
-  .blue-box{
+  
+  .blue-box {
     position: absolute;
     top: 0;
     width: 100%;
     background-color: #0357a5;
-    min-height: 60vh;
+    min-height: 72vh;
     z-index: -1;
     border-bottom-left-radius: 110px;
-  }
+}
 
   /* logo start */
 
@@ -40,13 +41,19 @@
      right: -26%;
      top: -7px;
   }
-  .OvalIcon{
+  /* .OvalIcon{
     position: absolute;
     top: -20%;
     left: 33%;
-  }
+  } */
 
-  .logo{
+  .OvalIcon {
+    position: absolute;
+    left: 34rem;
+}
+
+
+  /* .logo{
     position: relative;
     color: white;
     top: 31px;
@@ -54,25 +61,46 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+} */
+.logo {
+  position: relative;
+  color: white;
+  top: 6rem;
+  left: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
+.logo-text{
+  margin: 15px 0;
+}
+/* .logo-text{
+
+} */
   /* logo end */
 
-  .login-container {
+  /* .login-container {
     display: flex;  
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
-  }
+  } */
+  .login-container {
+    position: absolute;
+    top: 14.6rem;
+    left: 31rem;
+}
   
   .login-form {
-    height: 370px;
-    width: 350px;
+    height: 400px;
+    width: 420px;
     margin: auto;
     padding: 20px;
     background-color: white;
-    border-radius: 5px;
+    border-radius: 12px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
     text-align: center;
   }
@@ -108,16 +136,23 @@
     outline: none;
   }
   
-  .show-password-button {
+  /* .show-password-button {
     position: absolute;
     top: 15px;
     right: 10px;
     background-color: transparent;
     border: none;
     cursor: pointer;
-    font-size: 14px;
-    
-    
+    font-size: 14px; 
+  } */
+  .show-password-button {
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 14px; 
   }
   
   .forgot-password {
@@ -197,6 +232,7 @@
     background-color: #fff
   }
   .login-form {
+    width: 355px;
     margin: 0;
     padding: 13px;
     background-color: transparent;
@@ -208,30 +244,30 @@
   width: 100vw;
     background-color: #04539c;
     border-bottom-left-radius: 100px;
-    min-height: 50vh;
+    min-height: 42vh;
     overflow: hidden;
 }
 
-.logo{
-  top: 135px;
+.logo {
+  left: -15px;
+  top: 133px;
 }
 
 .logo p{
-  font-size: medium;
-  margin: 9px;
+  font-size: 19px;
+  margin: 20px;
 }
 .OvalIcon {
   width: 100%;
   position: absolute;
   left: 19%;
-  top: 1%;
 }
 
 .login-container {
   position: absolute;
   height: 350px;
-  top: 51%;
-  left: 20px;
+  top: 43%;
+  left: 8px;
 }
 .login-button{
   width:100%;
@@ -241,6 +277,11 @@
   display: flex;
   flex-direction: row-reverse;
   margin: 4px 0 50px 0;
+}
+.login-form h3 {
+  font-weight: 600;
+  color: #4e4b4b;
+  margin: 20px 0;
 }
   
 }

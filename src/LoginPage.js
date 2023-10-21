@@ -71,7 +71,7 @@ function LoginPage() {
         <img className="OvalIcon" src={Oval} alt="Oval" />
         <div className="logo">
           <img src={Logo} alt="Logo" />
-          <p>Online Project Management</p>
+          <p className='logo-text'>Online Project Management</p>
         </div>
       </div>
       <div className="login-container">
