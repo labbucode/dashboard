@@ -11,7 +11,7 @@
 .Project-Head {
     display: flex;
     justify-content: space-between;
-    margin: 20px 20px 0 2px;
+    margin: 30px 20px 0 2px;
     height: 17%;
 }
 
@@ -29,18 +29,20 @@
     padding: 10px;
     resize: none;
     height: 4rem;
-    font-size: 16px;
-    color: grey;
+    font-size: 14px;
+    color: #979797;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-.Project-Head-btn{    
+.Project-Head-btn{  
+    font-size: 16px;  
     cursor: pointer;
     background-color: #04539c;
     width: 150px;
-    height: 37px;
+    height: 40px;
     color: white;
     border-radius: 40px;
-    border: 1px solid black;
+    border: none;
 }
 .Project-Head-btn1{
     display: none;

@@ -2,10 +2,8 @@ import React from 'react';
 import './Header.css';
 import Logo from '../assists/Logo.svg';
 import LogoutIcon from '../assists/Logout.svg';
-import Oval from '../assists/Oval.svg';
-import { FaArrowLeft } from 'react-icons/fa';
-import CreateProject from '../CreateProject';
 import { useLocation, useNavigate} from 'react-router-dom';
+import HeaderBg from '../assists/Header-bg.svg'
 import { MdOutlineLogout, MdKeyboardArrowLeft } from 'react-icons/md';
 
 function Header() {
@@ -27,8 +25,6 @@ function Header() {
       <MdKeyboardArrowLeft size={26} color="white" className="arrow-icon" onClick={handleGoBack} />
         <p className="text-para">{title}</p>
       </div>
-
-      {/* <img className="Logo-oval" src={Oval} /> */}
      
           <MdOutlineLogout size={32} color="white" className="Logo-logout-icon" src={LogoutIcon} onClick={() => {
             localStorage.removeItem('access');

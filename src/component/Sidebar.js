@@ -8,6 +8,7 @@ import ProjectListIcon from '../assists/Project-list.svg';
 import BlueProjectListIcon from '../assists/Project-list-active.svg';
 import LogoutIcon from '../assists/Logout.svg';
 import { useNavigate, useLocation } from 'react-router-dom';
+import { MdOutlineLogout } from 'react-icons/md';
 
 function Sidebar() {
   const navigate = useNavigate();
@@ -35,7 +36,7 @@ function Sidebar() {
         >
           <img src={location.pathname === '/dashboard/list' ? BlueProjectListIcon : ProjectListIcon} alt="Project List" />
         </div>
-
+        <div style={{border: '0.3px solid lightgray' ,width: '50px',marginLeft: '5px'}}></div>
         <div
 
           onClick={() => {
@@ -50,14 +51,10 @@ function Sidebar() {
 
 
         <div className="exit-icon">
-        <img
-          onClick={() => {
+         <MdOutlineLogout size={32} color="grey" src={LogoutIcon} onClick={() => {
             localStorage.removeItem('access');
             navigate('/');
-          }}
-          src={LogoutIcon}
-          alt="Logout"
-        />
+          }} />
       </div>
       </div>
 

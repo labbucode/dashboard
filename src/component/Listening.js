@@ -251,7 +251,8 @@ export default function Listening() {
        onClick={() => setPage((prev) => prev > 0 ? prev - 1 : 1)}
         >PREV</span></button>
         <div className="pages">
-            <div onClick={() => setPage(1)}className="page-number pagi-active">1</div>
+          
+            <div onClick={() => setPage(1)}className="page-number">1</div>
             <div onClick={() => setPage(2)} className="page-number">2</div>
             
         </div>
