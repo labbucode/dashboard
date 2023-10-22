@@ -36,7 +36,7 @@ function Sidebar() {
         >
           <img src={location.pathname === '/dashboard/list' ? BlueProjectListIcon : ProjectListIcon} alt="Project List" />
         </div>
-        <div style={{border: '0.3px solid lightgray' ,width: '50px',marginLeft: '5px'}}></div>
+        <div className='br-line'></div>
         <div
 
           onClick={() => {

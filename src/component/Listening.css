@@ -288,5 +288,16 @@ tr{
 .sort-icon{
   display: block;
 }
+/* .td-btn1{
+  margin-right: 25px;
+}
+.td-btn{
+  margin-right: 25px;
+
+} */
+.td-btns{
+  display: flex;
+  justify-content: space-around;
+}
 
 }

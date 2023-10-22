@@ -148,7 +148,7 @@ export default function Listening() {
         onChange={(e) => setSearchText(e.target.value)}
       />
       </div>
-      <FcGenericSortingDesc size={24} color="grey" className='sort-icon' onClick={() => setShowSort(true)}/>
+      <FcGenericSortingDesc size={30} color="grey" className='sort-icon' onClick={() => setShowSort(true)}/>
       
 
 <div className="sort-controls">
@@ -177,13 +177,13 @@ export default function Listening() {
                   <div className='td'> <div style={{fontWeight: 700, color: '#312b2b'}}> {item.project_name}</div>
                   <div className='td' style={{color: 'grey'}}>{item.startDate} to {item.lastDate}</div>
                   </div>
-                  <div className='td'>Reason: {item.reason}</div>
-                  <div className='td'>Type: {item.type} <span className="dot-icon"></span>Category: {item.category}</div>
-                  <div className='td'>Div: {item.division} <span className="dot-icon"></span>Dept: {item.department}</div>
-                  <div className='td'>Location: {item.location}</div>
-                  <div className='td'>Priority: {item.priority}</div>
+                  <div className='td'>Reason: <span style={{color: 'black'}}>{item.reason}</span></div>
+                  <div className='td'>Type: <span style={{color: 'black'}}>{item.type}</span> <span className="dot-icon"></span>Category: <span style={{color: 'black'}}>{item.category}</span></div>
+                  <div className='td'>Div: <span style={{color: 'black'}}>{item.division}</span> <span className="dot-icon"></span>Dept: <span style={{color: 'black'}}>{item.department}</span></div>
+                  <div className='td'>Location: <span style={{color: 'black'}}>{item.location}</span></div>
+                  <div className='td'>Priority: <span style={{color: 'black'}}>{item.priority}</span></div>
                   <div className="status" >{item.status}</div>
-                  <div className='td'>
+                  <div className='td td-btns'>
                     <button className='td-btn1' onClick={() => handleStatus("Running", item._id)}>Start</button>
                     <button className='td-btn' onClick={() => handleStatus("Closed", item._id)}>Close</button>
                     <button className='td-btn' onClick={() => handleStatus("Cancelled", item._id)}>Cancel</button>

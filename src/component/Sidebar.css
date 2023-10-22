@@ -27,6 +27,11 @@
     bottom: 10%;
     left: 15px;
   }
+  .br-line{
+    border: 0.3px solid lightgray;
+    width: 50px;
+    margin-left: 5px;
+  }
 
   @media (max-width: 700px) {
     .sidebar {    
@@ -51,4 +56,7 @@
   .exit-icon{
       display: none;
   } 
+  .br-line{
+   display: none;
+  }
 }
