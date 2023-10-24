@@ -106,7 +106,7 @@ export default function CreateProjectContainer() {
             <div className='empty-error-msg'>{emptyError && formData.theme.length <= 0 &&  "Project Theme Required"}</div>
            </div>
             <button className="Project-Head-btn" type="submit" disabled={isLoading} >
-              {isLoading ? loadingText : 'Save Project'}
+              {isLoading ? 'loading' : 'Save Project'}
             </button>
           </div>
           <div className='Project-Main'>
