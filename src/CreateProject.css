@@ -1,36 +1,39 @@
-.project-page{
+.project-page {
   display: flex;
   overflow: hidden;
 }
 
-.left-column{
+.left-column {
   width: 5%;
 }
-.right-column{
+
+.right-column {
   width: 95%;
 }
 
 @media (max-width: 700px) {
-  body{
+  body {
     color: grey;
   }
-  .project-page{
+
+  .project-page {
     flex-direction: column;
   }
-  
-  .left-column{
-    
+
+  .left-column {
+
     width: 100%;
     position: fixed;
     bottom: 0;
-   border-radius: 30px;
-   z-index: 1;
+    border-radius: 30px;
+    z-index: 1;
   }
-  .right-column{
+
+  .right-column {
     height: auto;
     margin-bottom: 4rem;
     background: #f3f4f5;
     width: 100%;
   }
-    
+
 }

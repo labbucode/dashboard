@@ -1,4 +1,4 @@
-.Project-Container{
+.Project-Container {
     width: 95%;
     margin: -1.5rem auto 0;
     height: 87vh;
@@ -15,14 +15,15 @@
     height: 17%;
 }
 
-.label{
+.label {
     color: grey;
     display: block;
     text-align: left;
     margin: 0 0 6px 0;
     font-size: 15px;
 }
-.Project-Head-input{
+
+.Project-Head-input {
     width: 50vw;
     border-radius: 5px;
     border: 1px solid gray;
@@ -34,8 +35,8 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.Project-Head-btn{  
-    font-size: 16px;  
+.Project-Head-btn {
+    font-size: 16px;
     cursor: pointer;
     background-color: #04539c;
     width: 150px;
@@ -44,8 +45,9 @@
     border-radius: 40px;
     border: none;
 }
-.Project-Head-btn1{
-    display: none; 
+
+.Project-Head-btn1 {
+    display: none;
 }
 
 
@@ -58,7 +60,8 @@
     padding: 20px;
     margin-top: 15px;
 }
-.Project-Main-input{
+
+.Project-Main-input {
     font-size: medium;
     color: grey;
     padding: 5px;
@@ -69,72 +72,78 @@
 }
 
 
-.Project-status{
+.Project-status {
     position: relative;
     left: 47rem;
     bottom: 3%;
 }
 
-.empty-error-msg{
+.empty-error-msg {
     color: red;
     font-size: 12px;
 }
 
 @media (max-width: 700px) {
-.Project-Container{
-   
-    width: 95%;
-    margin: 9px;
-    height: auto;
-    background-color: #fff;
-    display: flex;
-    flex-direction: column;
-    border-radius: 8px;
-    padding-top: 20px;
-}
+    .Project-Container {
 
-.Project-Head-btn1 {
-    display: block;
-    cursor: pointer;
-    background-color: #04539c;
-    width: 90%;
-    height: 37px;
-    color: white;
-    border-radius: 40px;
-    border: 1px solid black;
-    margin: 15px;
-}
-.Project-Head-btn{
-    display: none;
-}
+        width: 95%;
+        margin: 9px;
+        height: auto;
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        border-radius: 8px;
+        padding-top: 20px;
+    }
+
+    .Project-Head-btn1 {
+        display: block;
+        cursor: pointer;
+        background-color: #04539c;
+        width: 90%;
+        height: 37px;
+        color: white;
+        border-radius: 40px;
+        border: 1px solid black;
+        margin: 15px;
+    }
+
+    .Project-Head-btn {
+        display: none;
+    }
 
 
 
-.Project-Main {
-    display: block;
-    width: 100%;
-    padding: 15px;
-    margin-top: 0px;
-}
-.Project-Head {
-    display: inline;
-    margin: 15px;
-}
-.Project-Main-input{
-   
-    padding: 1rem;
-    margin-bottom: 15px;
-}
-.label {
-    
-    font-size: 17px;
-}
-.Project-Head-input{
-    width: 95%;
-    
-}
-.Project-status {
-    position: static;
-    margin-top: 15px;
-}
+    .Project-Main {
+        display: block;
+        width: 100%;
+        padding: 15px;
+        margin-top: 0px;
+    }
+
+    .Project-Head {
+        display: inline;
+        margin: 15px;
+    }
+
+    .Project-Main-input {
+
+        padding: 1rem;
+        margin-bottom: 15px;
+    }
+
+    .label {
+
+        font-size: 17px;
+    }
+
+    .Project-Head-input {
+        width: 95%;
+
+    }
+
+    .Project-status {
+        position: static;
+        margin-top: 15px;
+    }
 }

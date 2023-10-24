@@ -7,17 +7,17 @@ import HighchartsReact from 'highcharts-react-official';
 
 export default function GraphImage() {
 
-  const [stats,setStats] = useState({});
+  const [stats, setStats] = useState({});
 
   useEffect(() => {
-    const token =  localStorage.getItem('token');
+    const token = localStorage.getItem('token');
     const headerValue = {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
     }
-    axios.get('https://backend-bbi9.onrender.com/listings/stats', {headers:headerValue})
-    .then((response) => setStats(response.data));
-  },[])
+    axios.get('https://backend-bbi9.onrender.com/listings/stats', { headers: headerValue })
+      .then((response) => setStats(response.data));
+  }, [])
 
   const options = {
     chart: {
@@ -39,7 +39,7 @@ export default function GraphImage() {
     series: [
       {
         name: 'Total',
-        data: [ stats.total],
+        data: [stats.total],
       },
       {
         name: 'Closed',
@@ -49,16 +49,16 @@ export default function GraphImage() {
         name: 'Running',
         data: [stats.Running],
       },
-      
-      
+
+
     ],
   };
 
-  
+
 
   return (
     <>
-    <div className='Graph-Page'>
+      <div className='Graph-Page'>
         <div className="box">
           <h4>Total Projects</h4>
           <p className='para-text'>{stats.total}</p>
@@ -78,14 +78,14 @@ export default function GraphImage() {
         <div className="box">
           <h4>Cancelled</h4>
           <p className='para-text'>{stats.Cancelled}</p>
-        </div>      
-    </div>
-    <div className="chart-container" >
-    <p className='para'>Department-Wise Success - Total Vs Closed</p>
+        </div>
+      </div>
+      <div className="chart-container" >
+        <p className='para'>Department-Wise Success - Total Vs Closed</p>
         <div className="chart">
-        <HighchartsReact highcharts={Highcharts} options={options} />
-    </div>
-    </div>
+          <HighchartsReact highcharts={Highcharts} options={options} />
+        </div>
+      </div>
     </>
   )
 }

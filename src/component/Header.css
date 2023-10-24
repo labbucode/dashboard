@@ -1,62 +1,73 @@
-.header{ 
- height: 6rem; 
- background-color: #045299;
- border-bottom-left-radius: 50px;
+.header {
+  height: 6rem;
+  background-color: #045299;
+  border-bottom-left-radius: 50px;
 }
-.Logo-oval{
-      height: 254px;
-      position: absolute;
-      top: -13px;
-      right: 35%;
+
+.Logo-oval {
+  height: 254px;
+  position: absolute;
+  top: -13px;
+  right: 35%;
 }
-.Logo-img{
+
+.Logo-img {
   width: 70px;
-    height: 43px;
-    position: relative;
-    left: 48%;
-    top: -13px;
+  height: 43px;
+  position: relative;
+  left: 48%;
+  top: -13px;
 }
-.text{
+
+.text {
   position: relative;
   top: 22%;
   left: 7%;
   color: #fff;
 }
-.arrow-icon{
+
+.arrow-icon {
   position: relative;
   bottom: -6px;
 }
-.oval{
+
+.oval {
   position: relative;
 }
-.text-para{
- font-size: 21px;
+
+.text-para {
+  font-size: 21px;
   display: inline;
   margin: 20px;
 }
-.Logo-logout-icon{
+
+.Logo-logout-icon {
   display: none;
 }
 
 
 @media (max-width: 700px) {
-  
-.header{ height: 4rem;
+
+  .header {
+    height: 4rem;
     background-color: #04539c;
     border-bottom-left-radius: 43px;
-}
-.Logo-img{
-  display: none;
-}
-.exit-icon {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-}
-.Logo-logout-icon{
-  display: block;
-  position: absolute;
-  right: 19px;
-  top: 19px;
-}
+  }
+
+  .Logo-img {
+    display: none;
+  }
+
+  .exit-icon {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+  }
+
+  .Logo-logout-icon {
+    display: block;
+    position: absolute;
+    right: 19px;
+    top: 19px;
+  }
 }

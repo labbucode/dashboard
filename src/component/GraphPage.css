@@ -1,62 +1,70 @@
-.Graph-Page{
-    display: flex;
-    justify-content: space-between;
-    width: 95%;
-    margin: -1.5rem auto 0;
-    height: 16vh;
-    background-color: transparent;
-    border-radius: 7px;
+.Graph-Page {
+  display: flex;
+  justify-content: space-between;
+  width: 95%;
+  margin: -1.5rem auto 0;
+  height: 16vh;
+  background-color: transparent;
+  border-radius: 7px;
 }
+
 .box {
-    width: 60%;
-    height: 104px;
-    background-color: white;
-    margin-right: 13px;
-    border-radius: 7px;
-    border-left: 5px solid #21dae3;
-    padding: 10px;
-  }
-  h4{
-    margin: 2%;
-  }
-  .Graph-Container{
-    margin: 2%;
-    width: 52%;
-    height: 325px;
-    background-color: white;
-    border-radius: 5px;
+  width: 60%;
+  height: 104px;
+  background-color: white;
+  margin-right: 13px;
+  border-radius: 7px;
+  border-left: 5px solid #21dae3;
+  padding: 10px;
+}
+
+h4 {
+  margin: 2%;
+}
+
+.Graph-Container {
+  margin: 2%;
+  width: 52%;
+  height: 325px;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.para-text {
+  margin: 10px;
+  font-size: xx-large;
+}
+
+.para {
+  margin: 17px;
+  font-size: unset;
+  font-weight: 600;
+}
+
+.chart {
+  margin: 15px;
+  width: 50%;
+}
+
+@media (max-width: 700px) {
+  .chart {
+    width: 92%;
   }
 
-  .para-text{
+  .box {
+    font-size: xx-small;
+  }
+
+  .Graph-Page {
     margin: 10px;
-    font-size: xx-large;
-  }
-  .para{
-    margin: 17px;
-    font-size: unset;
-    font-weight: 600;
   }
 
-  .chart{
-    margin: 15px;
-    width: 50%;
-  }
-  
-  @media (max-width: 700px) {
-    .chart{
-      width: 92%;
-    }
-    .box{
-      font-size: xx-small;
-    }
-    .Graph-Page {
-      margin: 10px;
-  }
-  .para{
+  .para {
     margin: 5px 0 -8px 15px;
   }
-  .chart-container{
+
+  .chart-container {
     height: 62vh;
-    
+
   }
-  }
+}

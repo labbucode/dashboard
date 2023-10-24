@@ -54,7 +54,7 @@ function LoginPage() {
         .then((data) => {
           localStorage.setItem('token', data.data.access);
           navigate('/dashboard/createproject');
-       
+
         })
 
         .catch((err) => {
@@ -95,29 +95,29 @@ function LoginPage() {
           <div className="form-group-password">
             <label htmlFor="password">Password:</label>
             <div className="form-group-password-input">
-            <input
-              type={showPassword ? 'text' : 'password'}
-              id="password"
-              placeholder="Enter your password"
-              value={password}
-              onChange={(e) => {
-                setPassword(e.target.value);
-                setPasswordError('');
-              }}
-              style={{ border: passwordError === '' ? '1px solid black' : '1px solid red' }}
-            />
-            {passwordError && <p className="error-text">{passwordError}</p>}
+              <input
+                type={showPassword ? 'text' : 'password'}
+                id="password"
+                placeholder="Enter your password"
+                value={password}
+                onChange={(e) => {
+                  setPassword(e.target.value);
+                  setPasswordError('');
+                }}
+                style={{ border: passwordError === '' ? '1px solid black' : '1px solid red' }}
+              />
+              {passwordError && <p className="error-text">{passwordError}</p>}
 
-            
-            <button
-             type="button"
-              className="show-password-button"
-              onClick={() => setShowPassword(!showPassword)}
-            >
-              {showPassword ? <FaEyeSlash /> : <FaEye />}
-            </button>
-            
-          </div>
+
+              <button
+                type="button"
+                className="show-password-button"
+                onClick={() => setShowPassword(!showPassword)}
+              >
+                {showPassword ? <FaEyeSlash /> : <FaEye />}
+              </button>
+
+            </div>
           </div>
           <div className="form-group-forget-password">
             <p className="forgot-password">Forgot Password?</p>

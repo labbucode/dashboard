@@ -1,62 +1,71 @@
-.sidebar {    
-    background-color: #fff;
-    height: 100vh;  
-  }
-  .active{
-    background-color: white;
-    border-left: 5px solid blue;
-    border-top: 5px solid white;
-    border-right: 5px solid white;
-    border-bottom: 5px solid white;
-    border-radius: 5px;
-  } 
-  .sidebar-icons{
-      position: relative;
-      top: 30%;
-  }
-  .sidebar-icon {
-    display: flex;
-    align-items: center;
-    justify-content: end;
-    width: 40px;
-    height: 60px;
-    cursor: pointer;
-  }
-  .exit-icon{
-    position: absolute;
-    bottom: 10%;
-    left: 15px;
-  }
-  .br-line{
-    border: 0.3px solid lightgray;
-    width: 50px;
-    margin-left: 5px;
+.sidebar {
+  background-color: #fff;
+  height: 100vh;
+}
+
+.active {
+  background-color: white;
+  border-left: 5px solid blue;
+  border-top: 5px solid white;
+  border-right: 5px solid white;
+  border-bottom: 5px solid white;
+  border-radius: 5px;
+}
+
+.sidebar-icons {
+  position: relative;
+  top: 30%;
+}
+
+.sidebar-icon {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  width: 40px;
+  height: 60px;
+  cursor: pointer;
+}
+
+.exit-icon {
+  position: absolute;
+  bottom: 10%;
+  left: 15px;
+}
+
+.br-line {
+  border: 0.3px solid lightgray;
+  width: 50px;
+  margin-left: 5px;
+}
+
+@media (max-width: 700px) {
+  .sidebar {
+
+    height: auto;
   }
 
-  @media (max-width: 700px) {
-    .sidebar {    
-      
-      height: auto; 
-    }
-    .sidebar-icons{
-      padding: 0 2rem;
-      position: relative;
-      top: 30%;
-      display: flex;
-      justify-content: space-between;
+  .sidebar-icons {
+    padding: 0 2rem;
+    position: relative;
+    top: 30%;
+    display: flex;
+    justify-content: space-between;
   }
-  .active{
+
+  .active {
     background-color: white;
     border-left: 5px solid white;
     border-top: 5px solid white;
     border-right: 5px solid white;
     border-bottom: 5px solid blue;
     border-radius: 5px;
-  } 
-  .exit-icon{
-      display: none;
-  } 
-  .br-line{
-   display: none;
+  }
+
+  .exit-icon {
+    display: none;
+  }
+
+  .br-line {
+    display: none;
   }
 }

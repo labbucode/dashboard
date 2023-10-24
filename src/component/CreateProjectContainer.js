@@ -20,10 +20,8 @@ export default function CreateProjectContainer() {
   });
 
   const [isLoading, setIsLoading] = useState(false);
-  const [loadingText, setLoadingText] = useState('');
   const [dateError, setDateError] = useState('');
   const [emptyError, setEmptyError] = useState('');
-
 
   const handleInputChange = (e) => {
     const { id, value } = e.target;
@@ -34,9 +32,9 @@ export default function CreateProjectContainer() {
     e.preventDefault();
 
     for (const key in formData) {
-      if (formData[key] === '' ) {
-       setEmptyError(true);
-        return; 
+      if (formData[key] === '') {
+        setEmptyError(true);
+        return;
       }
     }
 
@@ -62,49 +60,47 @@ export default function CreateProjectContainer() {
     };
 
     setIsLoading(true);
-   const token =  localStorage.getItem('token');
+    const token = localStorage.getItem('token');
     const headerValue = {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
     }
     axios.post("https://backend-bbi9.onrender.com/listings", content, { headers: headerValue })
-    .then(data => {
-      console.log(data);
-      
-      setFormData({
-        theme: '',
-        reason: '',
-        type: '',
-        division: '',
-        category: '',
-        priority: '',
-        department: '',
-        startDate: '',
-        endDate: '',
-        location: '',
-        status: 'Registered',
-      });
-      navigate('/dashboard/list');
-    })
-    .finally(() => setIsLoading(false));
+      .then(data => {
+        setFormData({
+          theme: '',
+          reason: '',
+          type: '',
+          division: '',
+          category: '',
+          priority: '',
+          department: '',
+          startDate: '',
+          endDate: '',
+          location: '',
+          status: 'Registered',
+        });
+        navigate('/dashboard/list');
+      })
+      .finally(() => setIsLoading(false));
   };
 
   return (
     <div className='wrapper'>
       <div className='Project-Container'>
         <form onSubmit={handleSubmit}>
-        <div className='Project-Head'>
-          <div style={{marginLeft: '18px'}}>
-            <textarea
-            rows="2"
-              className='Project-Head-input'
-              id='theme'
-              placeholder='Enter Project Theme'
-              value={formData.theme}
-              onChange={handleInputChange}
-            />
-            <div className='empty-error-msg'>{emptyError && formData.theme.length <= 0 &&  "Project Theme Required"}</div>
-           </div>
+          <div className='Project-Head'>
+            <div style={{ marginLeft: '18px' }}>
+              <textarea
+                rows="2"
+                className='Project-Head-input'
+                id='theme'
+                placeholder='Enter Project Theme'
+                value={formData.theme}
+                onChange={handleInputChange}
+              />
+              <div className='empty-error-msg'>{emptyError && formData.theme.length <= 0 && "Project Theme Required"}</div>
+            </div>
             <button className="Project-Head-btn" type="submit" disabled={isLoading} >
               {isLoading ? 'loading' : 'Save Project'}
             </button>
@@ -118,16 +114,16 @@ export default function CreateProjectContainer() {
                 className='Project-Main-input'
                 id='reason'
                 value={formData.reason}
-                onChange={handleInputChange}  
+                onChange={handleInputChange}
               >
                 <option disabled value="">Select reason</option>
                 <option>Business</option>
                 <option>Dealership</option>
                 <option>Transport</option>
               </select>
-                 <div className='empty-error-msg'>{emptyError && formData.type.length <= 0 &&  "Project Reason Required"}</div>
+              <div className='empty-error-msg'>{emptyError && formData.type.length <= 0 && "Project Reason Required"}</div>
             </div>
-           
+
             <div>
               <label htmlFor='type' className='label'>
                 Type
@@ -138,12 +134,12 @@ export default function CreateProjectContainer() {
                 value={formData.type}
                 onChange={handleInputChange}
               >
-                 <option disabled value="">Select type</option>
+                <option disabled value="">Select type</option>
                 <option>Internal</option>
                 <option>External</option>
                 <option>Vendor</option>
               </select>
-            <div className='empty-error-msg'>{emptyError && formData.type.length <= 0 &&  "Project Type Required"}</div>
+              <div className='empty-error-msg'>{emptyError && formData.type.length <= 0 && "Project Type Required"}</div>
             </div>
             <div>
               <label htmlFor='division' className='label'>
@@ -155,14 +151,14 @@ export default function CreateProjectContainer() {
                 value={formData.division}
                 onChange={handleInputChange}
               >
-                 <option disabled value="">Select division</option>
+                <option disabled value="">Select division</option>
                 <option>Compressor</option>
                 <option>Filters</option>
                 <option>Pumps</option>
                 <option>Glass</option>
                 <option>Water Heater</option>
               </select>
-              <div className='empty-error-msg'>{emptyError && formData.division.length <= 0 &&  "Project Division Required"}</div>
+              <div className='empty-error-msg'>{emptyError && formData.division.length <= 0 && "Project Division Required"}</div>
             </div>
             <div>
               <label htmlFor='category' className='label'>
@@ -180,7 +176,7 @@ export default function CreateProjectContainer() {
                 <option>Quality C</option>
                 <option>Quality D</option>
               </select>
-              <div className='empty-error-msg'>{emptyError && formData.category.length <= 0 &&  "Project Category Required"}</div>
+              <div className='empty-error-msg'>{emptyError && formData.category.length <= 0 && "Project Category Required"}</div>
             </div>
             <div>
               <label htmlFor='priority' className='label'>
@@ -197,7 +193,7 @@ export default function CreateProjectContainer() {
                 <option>Medium</option>
                 <option>Low</option>
               </select>
-              <div className='empty-error-msg'>{emptyError && formData.priority.length <= 0 &&  "Project Priority Required"}</div>
+              <div className='empty-error-msg'>{emptyError && formData.priority.length <= 0 && "Project Priority Required"}</div>
             </div>
             <div>
               <label htmlFor='department' className='label'>
@@ -216,38 +212,38 @@ export default function CreateProjectContainer() {
                 <option>Maintenance</option>
                 <option>Stores</option>
               </select>
-              <div className='empty-error-msg'>{emptyError && formData.department.length <= 0 &&  "Project Department Required"}</div>
+              <div className='empty-error-msg'>{emptyError && formData.department.length <= 0 && "Project Department Required"}</div>
             </div>
 
-          <div>
-            <label htmlFor='start' className='label'>
-              Start Date as per Project Plan
-            </label>
-            <input
-              type='date'
-              className='Project-Main-input'
-              id='startDate'
-              value={formData.startDate}
-              onChange={handleInputChange}
-            />
-            <div className='empty-error-msg'>{emptyError && formData.startDate.length <= 0 &&  "Project Start Date Required"}</div>
-          </div>
-          <div>
-            <label htmlFor='end' className='label'>
-              End Date as per Project Plan
-            </label>
-            <input
-              type='date'
-              className='Project-Main-input'
-              id='endDate'
-              value={formData.endDate}
-              onChange={handleInputChange}
-            />
-            <div className='empty-error-msg'>{emptyError && formData.endDate.length <= 0 &&  "Project Last Date Required"}</div>
-            {dateError && <p className="empty-error-msg">{dateError}</p>}
-          </div>
-          
-          <div>
+            <div>
+              <label htmlFor='start' className='label'>
+                Start Date as per Project Plan
+              </label>
+              <input
+                type='date'
+                className='Project-Main-input'
+                id='startDate'
+                value={formData.startDate}
+                onChange={handleInputChange}
+              />
+              <div className='empty-error-msg'>{emptyError && formData.startDate.length <= 0 && "Project Start Date Required"}</div>
+            </div>
+            <div>
+              <label htmlFor='end' className='label'>
+                End Date as per Project Plan
+              </label>
+              <input
+                type='date'
+                className='Project-Main-input'
+                id='endDate'
+                value={formData.endDate}
+                onChange={handleInputChange}
+              />
+              <div className='empty-error-msg'>{emptyError && formData.endDate.length <= 0 && "Project Last Date Required"}</div>
+              {dateError && <p className="empty-error-msg">{dateError}</p>}
+            </div>
+
+            <div>
               <label htmlFor='location' className='label'>
                 Location
               </label>
@@ -262,24 +258,18 @@ export default function CreateProjectContainer() {
                 <option>Delhi</option>
                 <option>Mumbai</option>
               </select>
-              
-            <div className='empty-error-msg'>{emptyError && formData.location.length <= 0 &&  "Project Location Required"}</div>
+
+              <div className='empty-error-msg'>{emptyError && formData.location.length <= 0 && "Project Location Required"}</div>
             </div>
             <div className='Project-status'>
-            <p>Status:<span style={{fontWeight: 500}}> Registered</span> </p>
-          </div>
-          <button className="Project-Head-btn1" type="submit" disabled={isLoading} >
-              {isLoading ? loadingText : 'Start Project'}
+              <p>Status:<span style={{ fontWeight: 500 }}> Registered</span> </p>
+            </div>
+            <button className="Project-Head-btn1" type="submit" disabled={isLoading} >
+              {isLoading ? 'loading' : 'Start Project'}
             </button>
           </div>
-
-         
-
-          
-
-          
         </form>
-        
+
       </div>
     </div>
   );

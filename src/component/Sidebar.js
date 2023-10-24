@@ -18,47 +18,47 @@ function Sidebar() {
     <>
       <div className="sidebar">
         <div className='sidebar-icons'>
-        <div
-          onClick={() => {
-            navigate('/dashboard/graph');
-          }}
-          className={`sidebar-icon ${location.pathname === '/dashboard/graph' ? 'active' : ''}`}
-        >
-          <img src={location.pathname === '/dashboard/graph' ? BlueDashboardIcon : DashboardIcon} alt="Dashboard" />
-        </div>
+          <div
+            onClick={() => {
+              navigate('/dashboard/graph');
+            }}
+            className={`sidebar-icon ${location.pathname === '/dashboard/graph' ? 'active' : ''}`}
+          >
+            <img src={location.pathname === '/dashboard/graph' ? BlueDashboardIcon : DashboardIcon} alt="Dashboard" />
+          </div>
 
-        <div
-          onClick={() => {
-            navigate('/dashboard/list');
-           
-          }}
-          className={`sidebar-icon ${location.pathname === '/dashboard/list' ? 'active' : ''}`}
-        >
-          <img src={location.pathname === '/dashboard/list' ? BlueProjectListIcon : ProjectListIcon} alt="Project List" />
-        </div>
-        <div className='br-line'></div>
-        <div
+          <div
+            onClick={() => {
+              navigate('/dashboard/list');
 
-          onClick={() => {
-            navigate('/dashboard/createproject');
-            
-          }}
-          className={`sidebar-icon ${location.pathname === '/dashboard/createproject' ? 'active' : ''}`}
-        >
-          <img src={location.pathname === '/dashboard/createproject' ? BluePlusIcon : PlusIcon} alt="Create Project" />
-        </div>
+            }}
+            className={`sidebar-icon ${location.pathname === '/dashboard/list' ? 'active' : ''}`}
+          >
+            <img src={location.pathname === '/dashboard/list' ? BlueProjectListIcon : ProjectListIcon} alt="Project List" />
+          </div>
+          <div className='br-line'></div>
+          <div
+
+            onClick={() => {
+              navigate('/dashboard/createproject');
+
+            }}
+            className={`sidebar-icon ${location.pathname === '/dashboard/createproject' ? 'active' : ''}`}
+          >
+            <img src={location.pathname === '/dashboard/createproject' ? BluePlusIcon : PlusIcon} alt="Create Project" />
+          </div>
         </div>
 
 
         <div className="exit-icon">
-         <MdOutlineLogout size={32} color="grey" src={LogoutIcon} onClick={() => {
+          <MdOutlineLogout size={32} color="grey" src={LogoutIcon} onClick={() => {
             localStorage.removeItem('access');
             navigate('/');
           }} />
-      </div>
+        </div>
       </div>
 
-      
+
     </>
   );
 }
