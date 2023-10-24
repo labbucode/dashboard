@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import './Sidebar.css';
 import PlusIcon from '../assists/create-project.svg';
 import BluePlusIcon from '../assists/create-project-active.svg';

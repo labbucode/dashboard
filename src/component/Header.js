@@ -30,7 +30,7 @@ function Header() {
         navigate('/');
       }} />
 
-      <img className="Logo-img" src={Logo} />
+      <img className="Logo-img" src={Logo} alt='logo' />
     </header>
   );
 }
