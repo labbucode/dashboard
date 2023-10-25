@@ -3,6 +3,7 @@ import '../component/Listening.css';
 import axios from 'axios';
 import { IoIosSearch } from 'react-icons/io';
 import { FcGenericSortingDesc } from 'react-icons/fc';
+import Pagination from './Pagination';
 
 
 
@@ -10,7 +11,7 @@ export default function Listening() {
   const [lists, setLists] = useState([]);
   const [loading, setLoading] = useState(true);
   const [page, setPage] = useState(1);
-  const [limit, setLimit] = useState(8);
+  const [limit, setLimit] = useState(3);
   const [maxPage, setMaxPage] = useState(1);
   const [searchText, setSearchText] = useState('');
   const [filteredLists, setFilteredLists] = useState([]);
@@ -95,9 +96,12 @@ export default function Listening() {
     } catch (err) {
 
     }
+ 
   }
 
-
+  const handlePageChange = (newPage) => {
+    setPage(newPage);
+  };
   return (
     <>
       {showSort && <div className='sortPage'>
@@ -253,21 +257,9 @@ export default function Listening() {
           </table>
         </div>
       </div>
+     
+      <Pagination currentPage={page} maxPage={maxPage} onPageChange={handlePageChange} />
 
-      <div className="pagination">
-        <button className="arrow pagi-button" id="prevPage">← <span className="nav-text"
-          onClick={() => setPage((prev) => prev > 0 ? prev - 1 : 1)}
-        >PREV</span></button>
-        <div className="pages">
-
-          <div onClick={() => setPage(1)} className="page-number">1</div>
-          <div onClick={() => setPage(2)} className="page-number">2</div>
-
-        </div>
-        <button className="arrow pagi-button" id="nextPage"><span className="nav-text"
-          onClick={() => setPage((prev) => prev < maxPage ? prev + 1 : maxPage)}
-        >NEXT</span> →</button>
-      </div>
     </>
   );
 }

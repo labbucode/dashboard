@@ -265,7 +265,7 @@ export default function CreateProjectContainer() {
               <p>Status:<span style={{ fontWeight: 500 }}> Registered</span> </p>
             </div>
             <button className="Project-Head-btn1" type="submit" disabled={isLoading} >
-              {isLoading ? 'loading' : 'Start Project'}
+              {isLoading ? 'loading...' : 'Start Project'}
             </button>
           </div>
         </form>
