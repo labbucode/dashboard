@@ -6,7 +6,8 @@ import HighchartsReact from 'highcharts-react-official';
 
 export default function GraphImage() {
   const [stats, setStats] = useState({});
-  const [closedDelayCount, setClosedDelayCount] = useState(0);
+  const [departmentStatusStats, setDepartmentStatusStats] = useState({});
+  const [projectsClosedDelay, setProjectsClosedDelay] = useState(0);
 
   useEffect(() => {
     const token = localStorage.getItem('token');
@@ -14,45 +15,81 @@ export default function GraphImage() {
       'Content-Type': 'application/json',
       'Authorization': `Bearer ${token}`,
     };
+
     axios.get('https://backend-bbi9.onrender.com/listings/stats', { headers: headerValue })
       .then((response) => {
         setStats(response.data);
-        const closedCount = response.data.Closed;
-        if (closedCount < 1) {
-          setClosedDelayCount(closedCount);
-        }
       });
   }, []);
+
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    const headerValue = {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`,
+    };
+
+    axios.get('https://backend-bbi9.onrender.com/listings/department-status-stats', { headers: headerValue })
+      .then((response) => {
+        setDepartmentStatusStats(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
+    const currentDate = new Date();
+    let count = 0;
+
+    axios.get('https://backend-bbi9.onrender.com/listings')
+      .then((response) => {
+        const projects = response.data;
+        projects.forEach((project) => {
+          const lastDate = new Date(project.lastDate);
+          const timeDifference = lastDate - currentDate;
+          const daysDifference = timeDifference / (1000 * 3600 * 24);
+
+          if (daysDifference < 1) {
+            count += 1;
+          }
+        });
+
+        setProjectsClosedDelay(count);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+  const dss = departmentStatusStats;
 
   const options = {
     chart: {
       type: 'column',
     },
     title: {
-      text: '',
+      text: 'Department-wise Listing Status',
     },
     xAxis: {
-      categories: [''],
+      categories: Object.keys(dss),
     },
     yAxis: {
       title: {
-        text: 'Success Percentage',
+        text: 'Values',
       },
-      min: 0,
-      max: 20,
     },
     series: [
       {
         name: 'Total',
-        data: [stats.total],
+        data: Object.keys(dss).map((department) =>
+          dss[department].Closed +
+          dss[department].Registered +
+          dss[department].Running +
+          dss[department].Cancelled
+        ),
       },
       {
         name: 'Closed',
-        data: [stats.Closed],
-      },
-      {
-        name: 'Running',
-        data: [stats.Running],
+        data: Object.keys(dss).map((department) => dss[department].Closed),
       },
     ],
   };
@@ -74,7 +111,7 @@ export default function GraphImage() {
         </div>
         <div className="box">
           <h4>Closed Delay</h4>
-          <p className="para-text">{closedDelayCount}</p>
+          <p className="para-text">{projectsClosedDelay}</p>
         </div>
         <div className="box">
           <h4>Cancelled</h4>

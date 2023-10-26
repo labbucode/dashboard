@@ -29,7 +29,6 @@ function LoginPage() {
     setPasswordError('');
 
     if (email === '' || password === '') {
-      setIsInvalidCredentials(true);
 
       if (email === '') {
         setEmailError('Email is required');
@@ -47,7 +46,7 @@ function LoginPage() {
       setIsLoading(false);
     } else {
       axios
-        .post('https://backend-bbi9.onrender.com/auth/login', {
+        .post('http://localhost:5001/auth/login', {
           email: email,
           password: password,
         })

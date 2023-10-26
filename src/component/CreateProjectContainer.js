@@ -211,6 +211,7 @@ export default function CreateProjectContainer() {
                 <option>Quality</option>
                 <option>Maintenance</option>
                 <option>Stores</option>
+                <option>HR</option>
               </select>
               <div className='empty-error-msg'>{emptyError && formData.department.length <= 0 && "Project Department Required"}</div>
             </div>
