@@ -67,7 +67,7 @@ export default function GraphImage() {
       type: 'column',
     },
     title: {
-      text: 'Department-wise Listing Status',
+      text: '',
     },
     xAxis: {
       categories: Object.keys(dss),
