@@ -40,7 +40,7 @@ export default function GraphImage() {
     const currentDate = new Date();
     let count = 0;
 
-    axios.get('https://backend-bbi9.onrender.com/listings')
+    axios.get('https://backend-bbi9.onrender.com/listings', { headers: headerValue })
       .then((response) => {
         const projects = response.data;
         projects.forEach((project) => {
