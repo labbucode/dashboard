@@ -48,7 +48,7 @@ export default function GraphImage() {
           const timeDifference = lastDate - currentDate;
           const daysDifference = timeDifference / (1000 * 3600 * 24);
 
-          if (daysDifference < 1) {
+          if (daysDifference < 6) {
             count += 1;
           }
         });
@@ -67,7 +67,7 @@ export default function GraphImage() {
       type: 'column',
     },
     title: {
-      text: 'Department-wise Listing Status',
+      text: '',
     },
     xAxis: {
       categories: Object.keys(dss),
