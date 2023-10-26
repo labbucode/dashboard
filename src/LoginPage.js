@@ -46,7 +46,7 @@ function LoginPage() {
       setIsLoading(false);
     } else {
       axios
-        .post('http://localhost:5001/auth/login', {
+        .post('https://backend-bbi9.onrender.com/auth/login', {
           email: email,
           password: password,
         })
