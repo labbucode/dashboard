@@ -42,7 +42,7 @@ export default function GraphImage() {
 
     axios.get('https://backend-bbi9.onrender.com/listings', { headers: headerValue })
       .then((response) => {
-        const projects = response.data;
+        const projects = response.data.data;
         projects.forEach((project) => {
           const lastDate = new Date(project.lastDate);
           const timeDifference = lastDate - currentDate;
