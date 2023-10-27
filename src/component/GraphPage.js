@@ -43,12 +43,14 @@ export default function GraphImage() {
     axios.get('https://backend-bbi9.onrender.com/listings', { headers: headerValue })
       .then((response) => {
         const projects = response.data.data;
+
         projects.forEach((project) => {
+          console.log(project);
           const lastDate = new Date(project.lastDate);
           const timeDifference = lastDate - currentDate;
           const daysDifference = timeDifference / (1000 * 3600 * 24);
 
-          if (daysDifference < 1) {
+          if (daysDifference < 1 && project.status==="Running") {
             count += 1;
           }
         });
